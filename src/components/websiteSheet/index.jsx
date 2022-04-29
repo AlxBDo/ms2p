@@ -1,38 +1,52 @@
 import React, { useState } from "react" 
 import PropTypes from 'prop-types' 
-import { WebsiteDescription, WebsiteName, WebsiteSheetCont, WebsiteScreenshot, WebsiteTechnology, WebsiteTechnologyLi, WebsiteUrl, WebsiteYear } from "./style"
+import { WebsiteDescription, WSDiplayBtn, WebsiteName, WebsiteSheetCont, WebsiteSheetHeader, WebsiteScreenshot, WebsiteTechnology, WebsiteTechnologyLi, WebsiteUrl, WebsiteYear } from "./style"
 import TechnologyBadge from "./technologyBadge"
 
 const getShowParams = (showMore) => {
     if(showMore) {
-        return { className: false, text: "moins" }
+        return { className: "large", text: "-" }
     } else {
-        return { className: "hdocIdden", text: "plus"}
+        return { className: "small", text: ""}
     }
 }
 
 function WebsiteSheet(props){
-    const { description, docId, name, screenshot, technology, url, year } = props
+    const { competences, description, docId, name, screenshot, scrollPosition, technology, url, year } = props
     const [ showMore, setShowMore ] = useState(false)
     const { className, text } = getShowParams(showMore)
+
     return (
-        <WebsiteSheetCont>
+        <WebsiteSheetCont className={ className }>
             <WebsiteScreenshot src={ screenshot } />
-            <div>
+            <WebsiteSheetHeader>
                 <WebsiteName>{ name }</WebsiteName> 
                 <WebsiteYear>{ year }</WebsiteYear>
-            </div>
-            <WebsiteDescription className={ className }>{ description }</WebsiteDescription>
+            </WebsiteSheetHeader>
+            <WebsiteDescription>
+                <p>{ description }</p>
+                { competences && (
+                    <ul key={`competencesListWS${ docId }`}>
+                        { competences.map( (competence, index) => (
+                            <li key={`competence${ docId + index }`}>{ competence }</li>
+                        ))}
+                    </ul>
+                )}
+            </WebsiteDescription>
             <WebsiteTechnology>{ technology.map( 
-                techno => <WebsiteTechnologyLi key={techno + docId}><TechnologyBadge technology={ techno } /></WebsiteTechnologyLi> 
+                (techno, index) => { return (className === "large" || (className === "small" && index < 4)) && <WebsiteTechnologyLi key={techno + docId}><TechnologyBadge technology={ techno } /></WebsiteTechnologyLi> }
             ) }</WebsiteTechnology>
-            <WebsiteUrl href={ url } target="_blank" />
-            <button onClick={ () => setShowMore(!showMore) }>Voir { text }</button>
+            <WebsiteUrl id={`${docId}-link`} href={ url } target="_blank" />
+            <WSDiplayBtn onClick={ () => {
+                setShowMore(!showMore)
+                setTimeout(() => window.scrollTo({top: scrollPosition, behavior: "smooth"}), 450)
+            } }>{ text }</WSDiplayBtn>
         </WebsiteSheetCont>
     )
 }
 
 WebsiteSheet.propTypes = {
+    competence: PropTypes.arrayOf(PropTypes.string), 
     description: PropTypes.string.isRequired,
     docId: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,

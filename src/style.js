@@ -1,25 +1,51 @@
 import { useContext } from 'react'
 import { ThemeContext } from './utils/themeContext'
-import styled, { css, createGlobalStyle } from 'styled-components'
+import { css, createGlobalStyle } from 'styled-components'
 
+const { darkColor1, darkColor2, errorColor, lightColor1, lightColor2, linkColor, validColor } = {
+    darkColor1: "42, 46, 52", 
+    darkColor2: "#27292B", 
+    errorColor: "#984447", 
+    lightColor1: "232, 233, 235", 
+    lightColor2: "#F4F4F4", 
+    linkColor: "#3F88C5",
+    validColor: {dark: "#4B8F8C", light: "#88BFBD"},
+}
+ 
 const colors = {
-    light: { color: "black", backgroundColor: "white", translucentBgColor: "rgba(255, 255, 255, 0.9)" }, 
-    dark: { color: "white", backgroundColor: "black", translucentBgColor: "rgba(0, 0, 0, 0.9)" }
+    light: { 
+        color: `rgb(${darkColor1})`, 
+        backgroundColor: `rgb(${lightColor1})`, 
+        color2: darkColor2, 
+        backgroundColor2: lightColor2, 
+        translucentBgColor: `rgba(${lightColor1}, 0.85)` 
+    }, 
+    dark: { 
+        color: `rgb(${lightColor1})`, 
+        backgroundColor: `rgb(${darkColor1})`, 
+        color2: lightColor2, 
+        backgroundColor2: darkColor2, 
+        translucentBgColor: `rgba(${darkColor1}, 0.85)` },
 }
 
 export const PageRules = css`
-    overflow: hidden;
     width: 1024px;
 `
 
 const StyledGlobalStyle = createGlobalStyle`
     :root {
         --bg-color-primary: ${ ({ theme = "light" }) => colors[theme].backgroundColor };
-        --color-error: red; 
+        --bg-color-secondary: ${ ({ theme = "light" }) => colors[theme].backgroundColor2 };
+        --bg-color-ternary: ${ ({ theme = "light" }) => theme === "light" ? "white" : "black" };
+        --color-error: ${ errorColor }; 
+        --color-link: ${ linkColor };
         --color-primary: ${ ({ theme = "light "}) => colors[theme].color };
-        --color-valid: green;
+        --color-secondary: ${ ({ theme = "light "}) => colors[theme].color2 };
+        --color-valid: ${ ({theme = "light"}) => validColor[theme] };
         --translucent-bg-color: ${ ({ theme = "light" }) => colors[theme].translucentBgColor };
     }
+
+    a { color: var(--color-link); }
 
     body {
         background-color: var(--bg-color-primary);

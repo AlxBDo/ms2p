@@ -5,7 +5,7 @@ import { homePageAnimations, S2pPageIconsCtn, S2pPageLink } from './style'
 function Home(){
 
     return(
-        <Page cssRules={homePageAnimations} >
+        <Page cssRules={homePageAnimations} name={"home"} >
             <div>
                 <h3>Bienvenue !</h3>
                 <p>Merci de venir découvrir mes compétences, expériences et réalisations.</p>

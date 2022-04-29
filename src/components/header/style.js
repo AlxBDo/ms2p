@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 import { PageRules } from '../../style'
 import msgIcon from '../../assets/msg-ico-light.png'
 
@@ -11,12 +12,13 @@ export const S2pHeader = styled.header`
     flex-wrap: wrap;
     align-items: flex-start;
     margin: 2% auto;
+    position: relative;
+    z-index: 9;
     ${ PageRules }
-
     button {
-        background-image: url(${msgIcon});
-        height: 70px;
-        width: 70px;
+        background-image: url(https://img.icons8.com/fluency/96/000000/secured-letter.png);
+        height: 65px;
+        width: 65px;
         border-radius: 38px;
         content: "contact";
         background-size: 50%;
@@ -26,6 +28,7 @@ export const S2pHeader = styled.header`
         cursor: pointer;
         background-color: inherit;
         color: inherit;
+        &:hover { background-size: 60%; }
     }
 
     h1, h2 {
@@ -44,11 +47,15 @@ export const S2pHeader = styled.header`
       }
 
     img {
-        width: 55px;
+        width: 65px;
         border-radius: 50px;
         border: 2px solid;
         padding: 2px;
       }
 
     
+`
+
+export const S2pHeaderLink = styled(Link)`
+      color: var(--color-link);
 `

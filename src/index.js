@@ -7,6 +7,7 @@ import { GlobalStyle } from './style';
 import Header from './components/header';
 import Home from './pages/home';
 import Portfolio from './pages/portfolio';
+import CV from './pages/cv';
 
 const root = createRoot(document.getElementById('root'))
 
@@ -20,6 +21,7 @@ root.render(
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route exact path="/portfolio" element={<Portfolio />} />
+            <Route exact path="/cv" element={<CV />} />
           </Routes>
         </ContactMeProvider>
       </ThemeProvider>
