@@ -58,20 +58,11 @@ export const openWSCtn = keyframes`
         height: 250px;
         margin: 5% 3%;
         text-align: left;
-        background-color: var(--color-valid);
-        border-radius: 125px;
         justify-content: start;
         align-items: left;
     }
-    25% {
-        background-color: var(--bg-color-secondary); 
-    }
-    50% {
-        border-radius: 75px;
-    }
     75% {
         width: 100%;
-        border-radius: 18px;
     }
     100%{
         display: flex;
@@ -80,7 +71,6 @@ export const openWSCtn = keyframes`
         justify-content: space-between;
         align-items: left;
         height: 260px;
-        background-color: var(--bg-color-secondary);
         margin: 5% 0;
         padding: 1%;
         border-radius: 10px;

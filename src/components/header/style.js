@@ -1,7 +1,8 @@
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { PageRules } from '../../style'
-import msgIcon from '../../assets/msg-ico-light.png'
+import { mailIcon } from '../contactMe/mailIcons'
+
 
 export const S2pHeader = styled.header`
     display: flex;
@@ -16,7 +17,7 @@ export const S2pHeader = styled.header`
     z-index: 9;
     ${ PageRules }
     button {
-        background-image: url(https://img.icons8.com/fluency/96/000000/secured-letter.png);
+        background-image: url(${mailIcon});
         height: 65px;
         width: 65px;
         border-radius: 38px;
@@ -24,13 +25,13 @@ export const S2pHeader = styled.header`
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
-        border: 2px solid;
+        border: 2px solid white;
         cursor: pointer;
         background-color: inherit;
         color: inherit;
+        transition: all 150ms linear;
         &:hover { background-size: 60%; }
     }
-
     h1, h2 {
         margin: 0;
         padding: 0;
@@ -49,7 +50,7 @@ export const S2pHeader = styled.header`
     img {
         width: 65px;
         border-radius: 50px;
-        border: 2px solid;
+        border: 2px solid var(--color-primary);
         padding: 2px;
       }
 

@@ -1,14 +1,40 @@
 import styled from 'styled-components' 
 
-export const TagsList = styled.ul`
-    list-style: none;
+export const EmptySearchDiv = styled.div`
+    margin: 10% auto; 
+    font-size: x-large;
+    color: var(--color-error);
+`
+
+export const FiltersSection = styled.section`
     padding: 2% 0;
-    margin: 3% auto;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
+    ul {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        li {
+            height: 28px;
+            border: 2px solid;
+            cursor: pointer;
+            transition: all 250ms linear;
+            color: var(--bg-color-secondary);
+        }
+    }
+`
+
+export const SelectedTagsList = styled.ul`
     background-color: var(--bg-color-secondary);
+    width: 100%;
+    li { 
+        margin: 10px;
+        transform: scale(0.85) rotate(-10deg); 
+    }
+`
+
+export const TagsList = styled.ul`
+    margin: 1% auto 2%;
+    width: 95%;
+    padding: 0;
     &::before {
         content: "Filtrer : ";
         line-height: 28px;
@@ -17,29 +43,24 @@ export const TagsList = styled.ul`
         color: var(--color-secondary);
     }
     li {
-        margin: 0 1%;
         width: 28px;
-        overflow: hidden;
+        margin: 5px;
         border-radius: 27px;
-        height: 28px;
-        border: 2px solid;
-        cursor: pointer;
-        transition: all 250ms linear;
+        overflow: hidden;
         opacity: 0.65;
-        color: var(--bg-color-secondary);
         transform: scale(0.9);
-        order: 1;
         &.selected-tags {
-            transform: scale(1);
-            order: 0;
-        }
-        &.selected-tags, &:hover {
-            opacity: 1;
-            color: var(--color-primary);
+            margin: 0;
+            padding: 0; 
+            width: 0; 
+            height: 0;
         }
         &:hover {
             border-radius: 0;
             width: auto;
+            margin: 5px 0;
+            opacity: 1;
+            color: var(--color-primary);
         }
     }
 `

@@ -38,7 +38,7 @@ export function sendMail(contact, msg, feedbackOutput, setDisplayContactForm) {
         },
     }).then( () => setTimeout( () => { 
         setDisplayContactForm("sent")
-        makeAFeedback(feedbackOutput, "sent", "Merci pour votre message.")
+        makeAFeedback(feedbackOutput, "sent")
     }, 500)).catch( (err) => {
         console.error("Send mail error : ", err)
         makeAFeedback(feedbackOutput, "error", "Désolé 😨, une erreur est survenue dans l'envoi de votre message.")

@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ContactMeContext } from '../../utils/contactMeContext'
-import logo from '../../assets/portrait_dessin_color_blue-zoom.jpg'
+import logo from '../../assets/abweb.gif'
 import { S2pHeader, S2pHeaderLink } from './style'
 
 function Header() {

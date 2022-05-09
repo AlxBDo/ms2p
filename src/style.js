@@ -18,14 +18,14 @@ const colors = {
         backgroundColor: `rgb(${lightColor1})`, 
         color2: darkColor2, 
         backgroundColor2: lightColor2, 
-        translucentBgColor: `rgba(${lightColor1}, 0.85)` 
+        translucentBgColor: `rgba(${lightColor1}, 0.95)` 
     }, 
     dark: { 
         color: `rgb(${lightColor1})`, 
         backgroundColor: `rgb(${darkColor1})`, 
         color2: lightColor2, 
         backgroundColor2: darkColor2, 
-        translucentBgColor: `rgba(${darkColor1}, 0.85)` },
+        translucentBgColor: `rgba(${darkColor1}, 0.95)` },
 }
 
 export const PageRules = css`
@@ -42,6 +42,7 @@ const StyledGlobalStyle = createGlobalStyle`
         --color-primary: ${ ({ theme = "light "}) => colors[theme].color };
         --color-secondary: ${ ({ theme = "light "}) => colors[theme].color2 };
         --color-valid: ${ ({theme = "light"}) => validColor[theme] };
+        --color-yellow: #E1CE7A;
         --translucent-bg-color: ${ ({ theme = "light" }) => colors[theme].translucentBgColor };
     }
 
@@ -53,6 +54,8 @@ const StyledGlobalStyle = createGlobalStyle`
         margin: 0;
         padding: 0;
     }
+
+    ul { list-style: none; }
 `
 
 export function GlobalStyle() {

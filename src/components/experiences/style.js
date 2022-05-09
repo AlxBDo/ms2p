@@ -76,14 +76,6 @@ export const ExpArticle = styled.article`
     }
 `
 
-export const ExpArticleH3 = styled.h3`
-    color: white;
-    background: linear-gradient(to right, var(--bg-color-primary) 45%, var(--color-error) 90%);
-    width: 100%;
-    padding: 1%;
-    text-align: right;
-`
-
 export const ExpArticleDiv = styled.div`
     padding: 1%; 
     &:first-child {

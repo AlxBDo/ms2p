@@ -6,7 +6,7 @@ export const S2pH2 = styled.h2`
     font-size: xx-large;
     text-transform: uppercase;
     text-align: right;
-    margin: -8% 0 4%;
+    margin: -8% 0 0;
     border-bottom: 5px solid;
     padding-bottom: 3%;
     color: var(--color-error);
@@ -18,7 +18,6 @@ export const S2pPageCtn = styled.div`
     margin: 0 auto;
     ${ (props) => props.$name === "home" && (`
         overflow: hidden;
-        height: 780px;
     `)}
 `
 

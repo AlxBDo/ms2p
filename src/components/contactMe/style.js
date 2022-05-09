@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { cancelMail, mailSentIcon } from "./mailIcons"
 import { closeFeedback, closeForm, openFeedback, openForm, sendingFeedback, sendingForm, sentFeedback } from "./keyframes"
 
 const { padding, width } = { padding : 25, width: 500}
@@ -10,7 +11,7 @@ export const ContactForm = styled.form`
     padding: ${padding}px;
     display: flex;
     flex-direction: column;
-    border: 2px solid;
+    border: 2px solid white;
     border-radius: 10px; 
     div { 
         text-align: right;
@@ -22,6 +23,7 @@ export const ContactForm = styled.form`
         margin: 2% auto;
         padding: 2%;
     }
+    textarea { height: 155px; }
 `
 
 export const ContactFormBtn = styled.button`
@@ -40,9 +42,9 @@ export const ContactFormBtn = styled.button`
         opacity: 1;
     }
     ${(props) => (props.$name === "close" ? (`
-        background-image: url(https://img.icons8.com/fluency/48/000000/filled-trash.png);
+        background-image: url(${ cancelMail });
     `) : (`
-        background-image: url(https://img.icons8.com/fluency/48/000000/sent.png);
+        background-image: url(${ mailSentIcon });
     `))}
 `
 
@@ -57,7 +59,6 @@ export const ContactFormCtn = styled.section`
     flex-direction: column;
     justify-content: center;
     overflow: hidden;
-    transition: all 250ms ease-in-out;
     z-index: 99;
     &.hidden {
         transition: all 150ms 500ms linear;
@@ -91,7 +92,7 @@ export const ContactFormCtn = styled.section`
     &.sent {
         form { opacity:0 }
         #form-feedback {
-            background-image: url(https://img.icons8.com/fluency/96/000000/sent.png); 
+            background-image: url(${ mailSentIcon }); 
             background-repeat: no-repeat; 
             transform: translateY(-230px); 
             animation: ${sentFeedback} 500ms ease-in-out forwards;

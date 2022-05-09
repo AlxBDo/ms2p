@@ -1,22 +1,32 @@
 import PropTypes from 'prop-types'
-import { ExpArticle, ExpArticleH3, ExpArticleDiv, ExpArticleP, ExpArticleUl } from "./style"
-import { CVSection } from "../../pages/cv/style"
+import UseFirestore from '../../utils/useFirestore'
+import Loader from "../loader"
+import { collectorFunction } from "./collectorFunction"
+import { ExpArticle, ExpArticleDiv, ExpArticleP, ExpArticleUl } from "./style"
+import { CVH3, CVSection } from "../../pages/cv/style"
 
 function Experiences(props){
 
-    const { experiences, name } = props
+    const { name } = props 
+    const params = name === "Formations" ? { fSCollectionName: "formations", id: "form", scrollAdd: 1000 } 
+    : { fSCollectionName: "experiences", id: "exp", scrollAdd: 300 }
+    const { data, isLoading } = UseFirestore(params.fSCollectionName, collectorFunction) 
 
-    experiences.sort( (a, b) => {
+    data && data.sort( (a, b) => {
         const aDate = a.dates ? a.dates.end : a.date 
         const bDate = b.dates ? b.dates.end : b.date 
         return parseInt(aDate.split(" ")[1]) > parseInt(bDate.split(" ")[1]) ? -1 : 1
     })
     
-    return (
+    return isLoading ? <Loader /> : (
         <CVSection>
-            <ExpArticleH3>{ name }</ExpArticleH3>
-            { experiences.map( exp => (
-                <ExpArticle key={`${exp.id}-experience`} className={"small"} onClick={ e => e.target.classList.toggle("small") }>
+            <CVH3 id={`${params.id}-section-title`}>{ name }</CVH3>
+            { data.map( exp => (
+                <ExpArticle key={`${exp.id}-experience`} className={"small"} onClick={ e => {
+                    const element = e.target
+                    element.classList.toggle("small")
+                    setTimeout(() => element.scrollIntoView({block: "center", behavior: "smooth"}), 150)
+                } }>
                     <ExpArticleDiv>
                         <ExpArticleP $name={"entitled"}>{ exp.entitled }</ExpArticleP>
                         <ExpArticleP $name={"entity"}>{ exp.entity }</ExpArticleP> 
@@ -29,7 +39,10 @@ function Experiences(props){
                         }
                     </ExpArticleDiv>
                     <ExpArticleDiv>
-                        { exp.description && <ExpArticleP $name={"description"}>{ exp.description }</ExpArticleP> }
+                        { exp.description && exp.description.indexOf("*") > 0 
+                        ? exp.description.split("*").map( 
+                            (d, index) => <ExpArticleP key={`${name}-desc-${index}`} $name={"description"}> { index > 0 && " - " }{ d }</ExpArticleP> 
+                        ) : <ExpArticleP $name={"description"}>{ exp.description }</ExpArticleP> }
                         <ExpArticleUl key={`${exp.id}-skills`} $name={"skills"}>{
                             exp.skills.map( (skill, index) => <li key={`${exp.id}-skill-${index}`}>{ skill }</li> )
                         }</ExpArticleUl>
@@ -41,7 +54,6 @@ function Experiences(props){
 }
 
 Experiences.propTypes = {
-    experiences: PropTypes.arrayOf( PropTypes.object ).isRequired, 
     name: PropTypes.string.isRequired
 }
 

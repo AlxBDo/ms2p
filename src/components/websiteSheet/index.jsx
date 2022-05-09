@@ -12,7 +12,7 @@ const getShowParams = (showMore) => {
 }
 
 function WebsiteSheet(props){
-    const { competences, description, docId, name, screenshot, scrollPosition, technology, url, year } = props
+    const { competences, description, docId, name, screenshot, technology, url, year } = props
     const [ showMore, setShowMore ] = useState(false)
     const { className, text } = getShowParams(showMore)
 
@@ -37,9 +37,9 @@ function WebsiteSheet(props){
                 (techno, index) => { return (className === "large" || (className === "small" && index < 4)) && <WebsiteTechnologyLi key={techno + docId}><TechnologyBadge technology={ techno } /></WebsiteTechnologyLi> }
             ) }</WebsiteTechnology>
             <WebsiteUrl id={`${docId}-link`} href={ url } target="_blank" />
-            <WSDiplayBtn onClick={ () => {
+            <WSDiplayBtn onClick={ (e) => {
                 setShowMore(!showMore)
-                setTimeout(() => window.scrollTo({top: scrollPosition, behavior: "smooth"}), 450)
+                setTimeout(() => e.target.scrollIntoView({block: "start", behavior: "smooth"}), 250)
             } }>{ text }</WSDiplayBtn>
         </WebsiteSheetCont>
     )

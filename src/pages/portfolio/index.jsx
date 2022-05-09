@@ -1,40 +1,52 @@
-import React, { useState } from "react" 
+import React, { useEffect, useState } from "react" 
 import UseFirestore from "../../utils/useFirestore"
 import Page from "../../components/page"
+import Loader from "../../components/loader"
 import selectTags from "./selectTags"
 import TechnologyBadge from "../../components/websiteSheet/technologyBadge"
 import websitesCollector from "./websitesCollector"
-import { websiteIsSelected } from "./websitesIsSelected"
+import updateSelected from "./updateSelected"
 import WebsiteSheet from "../../components/websiteSheet"
-import { TagsList, WebsitesPorfolio } from "./style"
+import { EmptySearchDiv, FiltersSection, SelectedTagsList, TagsList, WebsitesPorfolio } from "./style"
 
 function Portfolio(){
 
     const { data, isLoading } = UseFirestore("websites", websitesCollector) 
-    const [ tagsSelected, setTagsSelected ] = useState([]) 
-    const pieceOfWebsite = data.websites && parseInt((window.innerHeight-150) /data.websites.length)
-  
+    const [ selected, setSelected ] = useState({ tags : [], websites: [] }) 
+
+    useEffect(() => {
+        selected.websites.length === 0 && data.websites && selected.tags.length === 0 && setSelected(updateSelected([], data.websites))
+    }, [selected.tags.length, selected.websites.length, data.websites])
+
     return (
         <Page name={"portfolio"}>
-            {isLoading ? ( "Récupération des données...") : (
+            { isLoading ? <Loader /> : (
                 <>
-                    <TagsList>{data.technology.map( (techno) => (
-                        <li 
-                            key={`${techno}-tag`} 
-                            id={techno} 
-                            onClick={ () => setTagsSelected( selectTags(techno, tagsSelected) )}
-                        ><TechnologyBadge technology={techno} /></li>
-                    ))}</TagsList>
+                    <FiltersSection>
+                        <TagsList>{data.technology.map( (techno) => (
+                            <li 
+                                key={`${techno}-tag`} 
+                                id={techno} 
+                                onClick={ () => setSelected( updateSelected(selectTags(techno, selected.tags), data.websites ))}
+                            ><TechnologyBadge technology={techno} /></li>
+                        ))}</TagsList>
+                        <SelectedTagsList>{selected.tags.map( (techno) => (
+                            <li 
+                                key={`${techno}-selected-tags`} 
+                                onClick={ () => setSelected( updateSelected(selectTags(techno, selected.tags), data.websites ))}
+                            ><TechnologyBadge technology={techno} /></li>
+                        ))}</SelectedTagsList>
+                    </FiltersSection>
                     <WebsitesPorfolio>{ 
-                        data.websites.map( (website, index) => (tagsSelected.length === 0 || websiteIsSelected(website.technology, tagsSelected)) 
-                        && <WebsiteSheet 
+                        selected.websites.length === 0 ? (
+                            <EmptySearchDiv>🥶 Aucun site ne correspond à votre recherche 🥶</EmptySearchDiv>
+                        ) : selected.websites.map( website => <WebsiteSheet 
                         competences={ website.competences && website.competences }
                         description={ website.description } 
                         docId={ website.id } 
                         key={ website.id }
                         name={ website.name }
                         screenshot={ website.screenshot } 
-                        scrollPosition={ (pieceOfWebsite * index) + parseInt(pieceOfWebsite * 0.5)}
                         technology={ website.technology } 
                         url={ website.url } 
                         year={ website.year }

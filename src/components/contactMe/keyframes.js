@@ -1,16 +1,17 @@
 import { keyframes } from "styled-components";
+import { mailIcon, mailOpenIcon, mailSentIcon } from "./mailIcons";
 
 
 const feedbackCome = `
-    background-image: url(https://img.icons8.com/fluency/96/000000/secured-letter.png);
+    background-image: url(${ mailIcon });
     background-position: 100%;
-    transform: translate(37%, -311%);
-    background-size: 50px;
-    opacity: 0.7;
+    transform: translate(50%, -700px);
+    background-size: 0px;
+    opacity: 0.1;
 `
 
 const feedbackGone = `
-    background-image: url(https://img.icons8.com/fluency/96/000000/email-open.png); 
+    background-image: url(${ mailOpenIcon }); 
     background-position: 50%;
     transform: translate(0%, -150%);
     background-size: 96px;
@@ -52,7 +53,7 @@ export const openForm = keyframes`
 
 export const sendingFeedback = keyframes`
     0% { 
-        background-image: url(https://img.icons8.com/fluency/96/000000/email-open.png); 
+        background-image: url(${ mailOpenIcon }); 
     } 
     40% { 
         transform: translateY(-220px); 
@@ -63,7 +64,7 @@ export const sendingFeedback = keyframes`
         background-size: 106px;
     }
     50% { 
-        background-image: url(https://img.icons8.com/fluency/96/000000/secured-letter.png); 
+        background-image: url(${ mailIcon }); 
         background-size: 96px;
         background-position: 50% 50%;
     }
@@ -71,7 +72,7 @@ export const sendingFeedback = keyframes`
         background-size: 15px;
     }
     75% {
-        background-image: url(https://img.icons8.com/fluency/96/000000/sent.png);  
+        background-image: url(${ mailSentIcon });  
         background-size: 25px;
         opacity: 1;
     }
