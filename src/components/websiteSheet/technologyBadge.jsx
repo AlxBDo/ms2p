@@ -34,6 +34,13 @@ const technologyList = {
     vscode: { name: "Visual Studio Code", src: "https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" }
 }
 
+/**
+ * Display technology badge 
+ * @component
+ * @param {object} props 
+ * @param {string} props.technology - technology name 
+ * @returns {object} Technology
+ */
 function TechnologyBadge(props) {
     const { technology } = props 
     const technoInfo = technologyList[technology]

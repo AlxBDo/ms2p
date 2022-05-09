@@ -3,7 +3,17 @@ import PropTypes from 'prop-types'
 import { S2pH2, S2pPage, S2pPageCtn } from './style'
 import ContactMe from '../contactMe'
 
-
+/**
+ * Display website page and child's components
+ * @component 
+ * @param {object} props 
+ * @param {object} props.children 
+ * @param {object} props.cssRules - css object of styled components 
+ * @param {string} props.name - an id will be generate to : "name"-page 
+ * @param {string} props.pageClass - html class to apply 
+ * @param {function} props.scrollFunction - execute on scroll and receive scroll position 
+ * @returns {object} Page
+ */
 function Page(props) {
 
     const [ scrollPosition, setScrollPosition ] = useState(0)

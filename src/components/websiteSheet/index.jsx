@@ -3,6 +3,11 @@ import PropTypes from 'prop-types'
 import { WebsiteDescription, WSDiplayBtn, WebsiteName, WebsiteSheetCont, WebsiteSheetHeader, WebsiteScreenshot, WebsiteTechnology, WebsiteTechnologyLi, WebsiteUrl, WebsiteYear } from "./style"
 import TechnologyBadge from "./technologyBadge"
 
+/**
+ * Provided className and text to "show more/less" buttom 
+ * @param {boolean} showMore 
+ * @returns {object} showButtomParam
+ */
 const getShowParams = (showMore) => {
     if(showMore) {
         return { className: "large", text: "-" }
@@ -11,6 +16,19 @@ const getShowParams = (showMore) => {
     }
 }
 
+/**
+ * Display website description sheet 
+ * @component
+ * @param {object} props 
+ * @param {array} props.competences 
+ * @param {string} props.description 
+ * @param {string} props.docId - firestore document id 
+ * @param {string} props.screenshot - website screenshot url
+ * @param {array} props.technology 
+ * @param {string} props.url - website url 
+ * @param {number} props.year - creation date   
+ * @returns {object} WebsiteSheet 
+ */
 function WebsiteSheet(props){
     const { competences, description, docId, name, screenshot, technology, url, year } = props
     const [ showMore, setShowMore ] = useState(false)

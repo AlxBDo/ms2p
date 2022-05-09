@@ -7,8 +7,17 @@ import scrollFunction from "./scrollFunction"
 import { CVH3, CVMenuImg, CVMenuUl, CVSection, InfoPersDiv, menuIcons, scrollingRule } from "./style"
 import homeLogo from '../../assets/portrait_dessin_color_blue-zoom.jpg'
 
+/**
+ * Scroll to element
+ * @param {string} elementName 
+ */
 const scrollOnclick = (elementName) => document.getElementById(`${elementName}-section-title`).scrollIntoView({ block: "start", behavior: "smooth" }) 
 
+/**
+ * Display CV page
+ * @component
+ * @returns {object} CV
+ */
 function CV() {
 
     const { theme } = useContext(ThemeContext)

@@ -3,6 +3,11 @@ import { ContactMeContext } from '../../utils/contactMeContext'
 import logo from '../../assets/abweb.gif'
 import { S2pHeader, S2pHeaderLink } from './style'
 
+/**
+ * Display header page
+ * @component 
+ * @returns {object} Header
+ */
 function Header() {
     const { setDisplayContactForm } = useContext(ContactMeContext)
     return(

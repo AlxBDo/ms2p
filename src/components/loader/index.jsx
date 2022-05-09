@@ -1,5 +1,10 @@
 import { BallDiv, LoaderDiv } from './style'
 
+/**
+ * Diplay loader to wait data
+ * @component 
+ * @returns {object} Loader
+ */
 function Loader(){
     return (
         <LoaderDiv>

@@ -3,7 +3,11 @@ import { ContactMeContext } from '../../utils/contactMeContext'
 import { ContactForm, ContactFormBtn, ContactFormCtn, FormFeedback } from './style'
 import { submitContactMeForm } from './sendMail'
 
-
+/**
+ * Display contact form
+ * @component 
+ * @returns {object} ContactMe
+ */
 function ContactMe(){
 
     const { displayContactForm, setDisplayContactForm } = useContext(ContactMeContext)

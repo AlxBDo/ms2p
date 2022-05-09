@@ -1,6 +1,11 @@
 import { useEffect, useState } from "react"
 
-
+/**
+ * Firestore hook
+ * @param {string} collectionName - firestore collection name
+ * @param {function} collectorFunction - apply to collect data
+ * @returns {object} UseFirestore - { data, isLoading }
+ */
 function UseFirestore(collectionName, collectorFunction = false){
     const [data, setData] = useState([]) 
     const [ isLoading, setLoading ] = useState(true) 
@@ -16,29 +21,14 @@ function UseFirestore(collectionName, collectorFunction = false){
         if(isLoading){ 
             import("firebase/firestore").then(firestore => {
                 import("../firebase/config").then( (db) => {
-                    if(Array.isArray(collectionName)){
-                        const collections = [] 
-                        collectionName.forEach( colNam => {
-                            firestore.getDocs(firestore.collection(db.firestoreDb, colNam)).then( (docs) => {
-                                const documents = collectorFunction(docs)
-                                collections.push({
-                                    name: colNam,
-                                    documents
-                                })
-                            })
-                        })
-                        setData(collections)
+                    firestore.getDocs(firestore.collection(db.firestoreDb, collectionName)).then( (docs) => {
+                        setData(collectorFunction(docs))
                         setLoading(false)
-                    } else {
-                        firestore.getDocs(firestore.collection(db.firestoreDb, collectionName)).then( (docs) => {
-                            setData(collectorFunction(docs))
-                            setLoading(false)
-                        })
-                    }
+                    })
                 })
             })
         }
-    }, [ collectionName, collectorFunction, data, isLoading])
+    }, [ collectionName, collectorFunction, isLoading])
 
     return { data, isLoading }
 }

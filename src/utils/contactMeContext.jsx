@@ -1,5 +1,8 @@
 import React, { createContext, useState } from "react"
 
+/**
+ * Provides contact form display state
+ */
 export const ContactMeContext = createContext()
 
 export const ContactMeProvider = ({ children }) => {

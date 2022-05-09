@@ -9,12 +9,20 @@ import updateSelected from "./updateSelected"
 import WebsiteSheet from "../../components/websiteSheet"
 import { EmptySearchDiv, FiltersSection, SelectedTagsList, TagsList, WebsitesPorfolio } from "./style"
 
+/**
+ * Display portfolio page
+ * @returns {object} Portfolio
+ */
 function Portfolio(){
 
+    // get websites 
     const { data, isLoading } = UseFirestore("websites", websitesCollector) 
+
+    // store tags and websites selected
     const [ selected, setSelected ] = useState({ tags : [], websites: [] }) 
 
     useEffect(() => {
+        // init selected
         selected.websites.length === 0 && data.websites && selected.tags.length === 0 && setSelected(updateSelected([], data.websites))
     }, [selected.tags.length, selected.websites.length, data.websites])
 

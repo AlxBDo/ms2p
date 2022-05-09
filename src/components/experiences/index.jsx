@@ -5,6 +5,13 @@ import { collectorFunction } from "./collectorFunction"
 import { ExpArticle, ExpArticleDiv, ExpArticleP, ExpArticleUl } from "./style"
 import { CVH3, CVSection } from "../../pages/cv/style"
 
+/**
+ * Display experiences (training and jobs) 
+ * @component 
+ * @param {object} props 
+ * @param {string} props.name 
+ * @returns {object} Experiences
+ */
 function Experiences(props){
 
     const { name } = props 

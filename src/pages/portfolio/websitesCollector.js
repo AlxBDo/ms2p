@@ -1,3 +1,8 @@
+/**
+ * Create and return websites and technology array
+ * @param {object} docs - firestore documents
+ * @returns {object} websitesAndTechnology 
+ */
 export default function websitesCollector(docs) {
     const websites = []
     let techno = [] 

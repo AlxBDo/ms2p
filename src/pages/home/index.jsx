@@ -1,7 +1,11 @@
 
 import Page from '../../components/page'
-import { homePageAnimations, S2pPageIconsCtn, S2pPageExternalLink, S2pPageLink, S2pTextDiv } from './style'
+import { S2pPageIconsCtn, S2pPageExternalLink, S2pPageLink, S2pTextDiv } from './style'
 
+/**
+ * Display home page
+ * @returns {object} Home
+ */
 function Home(){
 
     return(

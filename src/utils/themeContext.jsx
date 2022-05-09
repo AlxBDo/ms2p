@@ -1,5 +1,8 @@
 import React, { useState, createContext } from "react";
 
+/**
+ * Provide user navigator theme : light or dark
+ */
 export const ThemeContext = createContext() 
 
 export const ThemeProvider = ({ children }) => {

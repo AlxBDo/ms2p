@@ -2,6 +2,15 @@ import { makeAFeedback } from "./feedback";
 import { collection, addDoc } from "firebase/firestore"; 
 import { firestoreDb } from "../../firebase/config";
 
+/**
+ * Check and submit contact form
+ * @param {object} e - event
+ * @param {object} mailContactInput 
+ * @param {object} msgContactInput - textarea containing message
+ * @param {object} feedbackOutput 
+ * @param {function} setDisplayContactForm 
+ * @returns {boolean} false
+ */
 export function submitContactMeForm(e, mailContactInput, msgContactInput, feedbackOutput, setDisplayContactForm){
     e.preventDefault();
     const mailContact = mailContactInput.value
@@ -20,7 +29,14 @@ export function submitContactMeForm(e, mailContactInput, msgContactInput, feedba
     msgContactInput.value = ""
     return false
 }
-
+ 
+/**
+ * 
+ * @param {string} contact - email
+ * @param {string} msg - message
+ * @param {object} feedbackOutput 
+ * @param {function} setDisplayContactForm 
+ */
 export function sendMail(contact, msg, feedbackOutput, setDisplayContactForm) {
 
     const mailHtml = "<p style=\"font-weight: lighter;\">Message de <span style=\"font-weight: bold\">"+ contact + "</span>.</p><br />"
