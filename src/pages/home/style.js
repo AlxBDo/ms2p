@@ -76,7 +76,6 @@ export const S2pTextDiv = styled.div`
         border-bottom: 3px solid;
     }
     p { 
-        font-size: large ;
         margin-bottom: 5%;
         text-align: justify;
     }
