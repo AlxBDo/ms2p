@@ -22,5 +22,6 @@ Alexandre Bidaud
 
 ## 3. Description 
 
-Ce site vous permet de découvrir mon parcours et mes réalisations.
+Ce site vous permet de découvrir mon parcours et mes réalisations. Pour le visiter, veuillez suivre le lien suivant : 
+[https://dazzling-pixie-8666a1.netlify.app/](https://dazzling-pixie-8666a1.netlify.app/).
 
