@@ -5,7 +5,7 @@ import Page from "../../components/page"
 import Experiences from "../../components/experiences"
 import scrollFunction from "./scrollFunction"
 import { CVH3, CVMenuImg, CVMenuUl, CVSection, InfoPersDiv, menuIcons, scrollingRule } from "./style"
-import homeLogo from '../../assets/portrait_dessin_color_blue-zoom.jpg'
+import homeLogo from '../../assets/tof2profil.png'
 
 /**
  * Scroll to element
@@ -37,7 +37,7 @@ function CV() {
                 <li onClick={ () => scrollOnclick("exp") }>
                     <CVMenuImg src={ menuIcons.exp[theme] } title={"Expériences Professionnelles"} alt={"Expériences Professionnelles"} />
                 </li>
-                <li><a href="https://1drv.ms/b/s!AmYKTlcElLTJx2txmOmFoC1X9svg?e=OvqWWz" target={"_blank"}>
+                <li><a href="https://1drv.ms/b/s!AmYKTlcElLTJx2txmOmFoC1X9svg?e=OvqWWz" target={"_blank"} rel="noreferrer">
                     <CVMenuImg src={ menuIcons.dld[theme] } title={"Télécharger mon CV"} alt={"Télécharger mon CV"} />
                 </a></li>
             </CVMenuUl>
