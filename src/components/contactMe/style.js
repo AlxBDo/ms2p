@@ -6,7 +6,6 @@ const { padding, width } = { padding : 25, width: 500}
 
 export const ContactForm = styled.form`
     background-color: var(--bg-color-primary);
-    width: ${width}px;
     margin: 0 auto;
     padding: ${padding}px;
     display: flex;
@@ -24,6 +23,8 @@ export const ContactForm = styled.form`
         padding: 2%;
     }
     textarea { height: 155px; }
+    @media (max-width: 1023px){ width: 80%; }
+    @media (min-width: 1024px){ width: ${width}px; }
 `
 
 export const ContactFormBtn = styled.button`

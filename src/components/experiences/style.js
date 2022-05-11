@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 
 export const ExpArticle = styled.article`
-    width: 100%;
     display: flex;
     flex-direction: column; 
     position: relative;
@@ -29,7 +28,6 @@ export const ExpArticle = styled.article`
         border-radius: 150px;
         &::after {
             content: "+";
-            position: absolute;
             right: -25px;
             bottom: auto;
             border-radius: 30px;
@@ -37,7 +35,6 @@ export const ExpArticle = styled.article`
         }
         div:first-child {
             flex-direction: column;
-            flex-wrap: wrap;
             height: 60%;
             width: 60%;
             justify-content: center;
@@ -47,7 +44,6 @@ export const ExpArticle = styled.article`
             p {
                 width: 70%;
                 text-align: center;
-                margin: 4% auto;
                 font-weight: bold;
                 &:last-of-type { color: var(--bg-color-primary); }
             }
@@ -74,6 +70,15 @@ export const ExpArticle = styled.article`
             transform: scale(0);
         }
     }
+    @media (max-width: 1023px){
+        width: 90%;
+        &.small div:first-child ul { display: none ; }
+    }
+    @media (min-width: 1024px){
+        width: 100%;
+        div:first-child { flex-wrap: wrap; }
+        p { margin: 4% auto; }
+    }
 `
 
 export const ExpArticleDiv = styled.div`
@@ -81,40 +86,66 @@ export const ExpArticleDiv = styled.div`
     &:first-child {
         display: flex;
         align-items: center;
-        background: linear-gradient(to right, var(--color-valid) 0%, var(--bg-color-primary) 50%);
         transition: all 250ms ease-in-out;
         p:first-child {
             font-size: x-large;
-            width: 55%;
             color: var(--color-secondary);
         }
-        p:last-of-type {
-            width: 25%;
-        }
-        ul {
-            width: 18%;
-            position: absolute;
-            right: 1%;
-            justify-content: end;
-            li { margin-left: 15px; }
-        }
+        ul li { margin-left: 15px; }}
     }
     &:last-child {
-        margin: 1%;
         transition: all 150ms 100ms ease-in-out;
         ul {
-            margin: 2% auto 1%;
             color: var(--color-link);
             font-weight: bold;
             flex-wrap: wrap;
             li { margin: 5px 15px 10px 0; }
         }
     }
+    @media (max-width: 1023px){
+        &:first-child {
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: var(--color-valid);
+            p:first-child { 
+                width: 90%;
+                margin: 2% auto;
+                text-align: center;
+            }
+        }
+        &:last-child {
+            margin: 1% auto;
+            padding-bottom: 65px;
+            font-size: smaller;
+            width: 90%;
+            p { margin: 5% auto; }
+            ul {margin: 5% auto 1%;}
+        }
+    }
+    @media (min-width: 1024px){
+        &:first-child {
+            background: linear-gradient(to right, var(--color-valid) 0%, var(--bg-color-primary) 50%);
+            p:first-child { width: 55%; }
+            p:last-of-type { width: 25%; }
+            ul {
+                width: 18%;
+                position: absolute;
+                right: 1%;
+                justify-content: end;
+            }
+        }
+        &:last-child {
+            margin: 1%;
+            ul { margin: 2% auto 1%; }
+        }
+    }
 `
 
 export const ExpArticleP = styled.p`
-    margin: 0;
     text-align: justify;
+    @media (min-width: 1024px){
+        margin: 0 auto;
+    }
 `
 
 export const ExpArticleUl = styled.ul`

@@ -27,15 +27,8 @@ export const CVArticle = styled.article`
     flex-direction: column; 
 `
 
-export const CVArticleP = styled.p`
-
-`
-
 export const CVH3 = styled.h3`
     color: white;
-    background: linear-gradient(to right, var(--bg-color-primary) 45%, var(--color-error) 90%);
-    width: 100%;
-    padding: 1%;
     text-align: right;
     position: relative;
     border-bottom: 5px solid var(--bg-color-secondary);
@@ -52,17 +45,35 @@ export const CVH3 = styled.h3`
     }
     &::before {
         content: "";
-        height: 50px;
-        width: 50px;
-        background-color: var(--bg-color-secondary);
-        border-radius: 5px;
         position: absolute;
+        background-color: var(--bg-color-secondary);
         background-repeat: no-repeat;
         background-position: center;
-        background-size: 25px;
         left: 0px;
-        top: 20px;
         z-index: 99;
+    }
+    @media (max-width: 1023px){
+        width: 85%;
+        padding: 1% 2%;
+        background-color: var(--color-error);
+        &::before {
+            height: 35px;
+            width: 35px;
+            background-size: 15px;
+            top: -2px;
+        }
+    }
+    @media (min-width: 1024px){
+        background: linear-gradient(to right, var(--bg-color-primary) 45%, var(--color-error) 90%);
+        width: 100%;
+        padding: 1%;
+        &::before {
+            height: 50px;
+            width: 50px;
+            border-radius: 5px;
+            background-size: 25px;
+            top: 20px;
+        }
     }
 `
 
@@ -105,15 +116,23 @@ export const CVMenuUl = styled.ul`
 `
 
 export const CVSection = styled.section`
-    display: flex;
-    flex-wrap: wrap;
     margin-bottom: 10%;
+    @media (min-width: 1024px){
+        display: flex;
+        flex-wrap: wrap;
+    }
 `
 
 export const InfoPersDiv = styled.div`
-    margin: auto;
     p {
         margin: 5px auto;
+    }
+    @media (max-width: 1023px){
+        margin: 5% auto;
+        width: 80%;
+    }
+    @media (min-width: 1024px) {
+        margin: auto;
     }
 `
 

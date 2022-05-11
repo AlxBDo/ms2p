@@ -20,6 +20,7 @@ function Page(props) {
     const { children, cssRules, name, pageClass, scrollFunction } = props
 
     useEffect( () => {
+        document.title = `Alexandre Bidaud - ${name}`
         if(scrollFunction){ window.addEventListener("scroll", () => setScrollPosition(window.pageYOffset)) }
     })
 

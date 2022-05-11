@@ -29,7 +29,9 @@ const colors = {
 }
 
 export const PageRules = css`
-    width: 1024px;
+    @media (min-width: 1024px){
+        width: 1024px;
+    }
 `
 
 const StyledGlobalStyle = createGlobalStyle`

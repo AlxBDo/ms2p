@@ -22,5 +22,5 @@ Alexandre Bidaud
 
 ## 3. Description 
 
-Ce site vous propose de découvrir mon parcours et mes réalisations.
+Ce site vous permet de découvrir mon parcours et mes réalisations.
 

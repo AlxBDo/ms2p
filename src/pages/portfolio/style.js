@@ -39,7 +39,6 @@ export const TagsList = styled.ul`
         content: "Filtrer : ";
         line-height: 28px;
         font-size: smaller;
-        margin-right: 2%;
         color: var(--color-secondary);
     }
     li {
@@ -63,6 +62,18 @@ export const TagsList = styled.ul`
             color: var(--color-primary);
         }
     }
+    @media (max-width: 1023px){
+        position: relative; 
+        &::before {
+            position: absolute;
+            left: 5%;
+            top: -25px;
+        }
+    }
+    @media (min-width: 1024px){
+        position: relative; 
+        &::before { margin-right: 2%; }
+    }
 `
 
 export const WebsitesPorfolio = styled.section`
@@ -70,6 +81,5 @@ export const WebsitesPorfolio = styled.section`
     flex-wrap: wrap;
     justify-content: center;
     align-item: center;
-    width: 1024px;
     margin: 0 auto;
 `

@@ -15,8 +15,6 @@ export const LoaderDiv = styled.div`
 
 export const BallDiv = styled.div`
     position: absolute;
-    left: 50%;
-    top: 50%;
     height: 85px;
     width: 150px;
     padding-top: 65px;
@@ -41,5 +39,13 @@ export const BallDiv = styled.div`
     &:nth-of-type(3) {
         background-color: var(--color-valid);
         animation: ${moveBall("X", 75)} 500ms 375ms ease-in-out infinite alternate;
+    }
+    @media (max-width: 1023px){ 
+        left: 30%;
+        top: 40%;
+    }
+    @media (min-width: 1024px){ 
+        left: 50%;
+        top: 50%;
     }
 `

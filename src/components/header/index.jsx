@@ -1,6 +1,6 @@
 import { useContext } from 'react'
 import { ContactMeContext } from '../../utils/contactMeContext'
-import logo from '../../assets/abweb.gif'
+import logo from '../../assets/tof2profil.jpg'
 import { S2pHeader, S2pHeaderLink } from './style'
 
 /**

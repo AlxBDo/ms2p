@@ -3,14 +3,22 @@ import { PageRules } from '../../style'
 
 
 export const S2pH2 = styled.h2`
-    font-size: xx-large;
     text-transform: uppercase;
     text-align: right;
-    margin: -8% 0 0;
-    border-bottom: 5px solid;
-    padding-bottom: 3%;
     color: var(--color-error);
-    padding-right: 15%;
+    @media (max-width: 1023px) {
+        font-size: medium;
+        border-top: 5px solid;
+        padding-top: 2%;
+        padding-right: 1%;
+    }
+    @media (min-width: 1024px) {
+        font-size: xx-large;
+        margin: -8% 0 0;
+        border-bottom: 5px solid;
+        padding-bottom: 3%;
+        padding-right: 15%;
+    }
 `
 
 export const S2pPageCtn = styled.div`

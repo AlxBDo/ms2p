@@ -22,12 +22,24 @@ const linkDef = `
         transform: scale(1.1);
         box-shadow: 1px 1px 2px black;
     }
+    @media (max-width: 1023px){
+        margin: 5% auto;
+    }
 `
 
 export const S2pPageIconsCtn = styled.div`
     margin-top: 7%;
     display: flex;
     justify-content: space-around;
+    @media (max-width: 800px){
+        flex-direction: column;
+        align-items: center;
+    }
+    @media (min-width: 400px) and (max-width: 1023px){
+        max-width: 440px;
+        flex-wrap: wrap;
+        margin: auto;
+    }
 `
 
 export const S2pPageExternalLink = styled.a`
