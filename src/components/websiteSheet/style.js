@@ -20,10 +20,16 @@ export const WebsiteDescription = styled.div`
         margin: 5px 10px; 
         font-size: small;
         color: var(--color-secondary);
-        li {
-            width: 45%;
-            margin-bottom: 5px;
+        li { margin-bottom: 5px; }
+    }
+    @media (max-width: 1023px){
+        ul li {
+            list-style: circle;
+            margin-left: 25px;
         }
+    }
+    @media (min-width: 1024px){
+        ul li { width: 45%; }
     }
 `
 
@@ -41,11 +47,7 @@ export const WebsiteSheetCont = styled.article`
         margin: 0 1%; 
         transition: all 250ms ease-in; 
     }
-    ul { 
-        padding: 0; 
-        list-style: none;
-        display: flex;
-    }
+    ul { padding: 0; }
     &.small {
         width: 250px;
         height: 250px;
@@ -140,7 +142,6 @@ export const WebsiteSheetCont = styled.article`
             min-height: 225px;
         }
         ul {
-            flex-wrap: wrap;
             animation: ${openWSItemHide} 200ms 350ms ease-in-out backwards;
             &:not(div){ margin: 5px auto 0; }
             li { 
@@ -183,6 +184,7 @@ export const WebsiteSheetCont = styled.article`
                 margin: auto;
             }
             ul {
+                display: flex;
                 flex-wrap: wrap;
                 animation: ${openWSItemHide} 200ms 350ms ease-in-out backwards;
                 &:not(div){  max-width: 650px; }
@@ -219,6 +221,10 @@ export const WebsiteTechnology = styled.ul`
     margin: 5px 10px;
     font-size: small;
     color: var(--color-secondary);
+    @media (max-width: 1023px){
+        display: flex;
+        flex-wrap: wrap;
+    }
 `
 
 export const WebsiteTechnologyLi = styled.li`
