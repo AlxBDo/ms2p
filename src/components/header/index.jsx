@@ -14,7 +14,7 @@ function Header() {
         <S2pHeader>
             <S2pHeaderLink to="/"><img src={logo} alt="Profil" title="Alexandre Bidaud" /></S2pHeaderLink>
             <h1>Alexandre Bidaud</h1>
-            <h2>Développeur Web Front-End</h2>
+            <h2>Développeur Web Junior</h2>
             <button alt="Me contacter" onClick={ (e) => { 
                 e.preventDefault()
                 setDisplayContactForm("open") } 

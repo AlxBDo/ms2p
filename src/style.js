@@ -55,6 +55,7 @@ const StyledGlobalStyle = createGlobalStyle`
         color: var(--color-primary); 
         margin: 0;
         padding: 0;
+        font-family: "Prompt";
     }
 
     ul { list-style: none; }

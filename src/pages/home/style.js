@@ -24,22 +24,22 @@ const linkDef = `
     }
     @media (max-width: 1023px){
         margin: 5% auto;
+        &:first-of-type { margin-left: -2%; }
+        &:nth-of-type(2), &:last-of-type { margin: -25% -5% 0 55% }
+        &:nth-of-type(3) { margin: -6% 0 0 -2% }
     }
 `
 
 export const S2pPageIconsCtn = styled.div`
     margin-top: 7%;
     display: flex;
-    justify-content: space-around;
-    @media (max-width: 800px){
-        flex-direction: column;
-        align-items: center;
-    }
-    @media (min-width: 400px) and (max-width: 1023px){
+    @media (min-width: 300px) and (max-width: 1023px){
         max-width: 440px;
         flex-wrap: wrap;
         margin: auto;
+        width: 80%;
     }
+    @media (min-width: 1024px){ justify-content: space-around; }
 `
 
 export const S2pPageExternalLink = styled.a`
@@ -83,12 +83,13 @@ export const S2pTextDiv = styled.div`
     margin: auto;
     h3 { 
         font-size: xx-large ; 
-        margin: 5% auto;
+        margin: 15% auto 5%;
         padding-bottom: 3%;
         border-bottom: 3px solid;
+        font-family: "Kaushan Script"
     }
     p { 
-        margin-bottom: 5%;
+        margin: 15% 5%;
         text-align: justify;
     }
 `

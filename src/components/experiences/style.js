@@ -72,7 +72,19 @@ export const ExpArticle = styled.article`
     }
     @media (max-width: 1023px){
         width: 90%;
-        &.small div:first-child ul { display: none ; }
+        &.small div:first-child { 
+            ul { display: none ; }
+            p {
+                max-height: 77px;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                -webkit-line-clamp: 3;
+                font-size: large;
+                -webkit-box-orient: vertical;
+                display: -webkit-box;
+                margin-bottom: 0px;
+            }
+        }
     }
     @media (min-width: 1024px){
         width: 100%;

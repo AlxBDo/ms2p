@@ -7,21 +7,18 @@ import { mailIcon } from '../contactMe/mailIcons'
 export const S2pHeader = styled.header`
     display: flex;
     flex-direction: column;
-    height: 75px;
+    height: 100px;
     justify-content: center;
     text-align: left;
     flex-wrap: wrap;
-    margin: 2% auto;
     position: relative;
     z-index: 9;
     ${ PageRules }
     @media (max-width: 1023px) {
-      align-items: center;
       width: 95%;
+      margin: 5% auto;
       a { margin-top: 5px; }
-      h1 {
-          font-size: large;
-      }
+      h1 { font-size: x-large; }
       h2 {
         font-size: medium;
         max-width: 165px;
@@ -30,9 +27,15 @@ export const S2pHeader = styled.header`
     }
     @media (min-width: 1024px){
       align-items: flex-start;
-      h1 { font-size: x-large; }
-      h2 { font-size: xx-large; }
-      h1, h2 { width: 80%; }
+      margin: 2% auto;
+      h1 { 
+        font-size: xx-large; 
+      }
+      h2 { font-size: x-large; }
+      h1, h2 { 
+        width: 80%;
+        text-align: left; 
+      }
     }
     button {
         background-image: url(${mailIcon});
@@ -50,12 +53,12 @@ export const S2pHeader = styled.header`
         transition: all 150ms linear;
         &:hover { background-size: 60%; }
     }
+    h1 { font-family: "Permanent Marker";}
+    h2 { font-family: "Kaushan Script";}
     h1, h2 {
         margin: 0;
         padding: 0;
-        font-family: "Cooper Black";
         font-weight: normal;
-        text-align: left;
     }
     img {
         width: 65px;
