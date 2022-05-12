@@ -65,22 +65,6 @@ export const ContactFormCtn = styled.section`
         transition: all 150ms 500ms linear;
         transform: scaleY(0) translateY(-200px);
         transform-origin: top;
-        form {
-            animation: ${closeForm} 175ms forwards;
-        }
-        #form-feedback {
-            background-repeat: no-repeat;
-            animation: ${closeFeedback} 350ms 150ms ease-in-out forwards;
-        }
-    }
-    &.open { 
-        form {
-            animation: ${openForm} 175ms 325ms backwards;
-        }
-        #form-feedback {
-            background-repeat: no-repeat;
-            animation: ${openFeedback} 350ms ease-in-out;
-        }
     }
     &.sending {
         form { animation: ${sendingForm} 250ms ease-in-out forwards; }
@@ -99,11 +83,30 @@ export const ContactFormCtn = styled.section`
             animation: ${sentFeedback} 500ms ease-in-out forwards;
         }
     }
+    @media (min-width: 1024px){
+        &.hidden {
+            form {
+                animation: ${closeForm} 175ms forwards;
+            }
+            #form-feedback {
+                background-repeat: no-repeat;
+                animation: ${closeFeedback} 350ms 150ms ease-in-out forwards;
+            }
+        }
+        &.open { 
+            form {
+                animation: ${openForm} 175ms 325ms backwards;
+            }
+            #form-feedback {
+                background-repeat: no-repeat;
+                animation: ${openFeedback} 350ms ease-in-out;
+            }
+        }
+    }
 `
 
 export const FormFeedback = styled.div`
     min-height: 100px;
-    width: ${width}px;
     margin: 0 auto;
     padding: ${padding}px;
     &.sending { content: "Envoi en cours..."; } 
@@ -117,4 +120,5 @@ export const FormFeedback = styled.div`
         font-weight: bold;
         text-align: center;
     }
+    @media (min-width: 1024px){ width: ${width}px; }
 `

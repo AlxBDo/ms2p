@@ -83,14 +83,18 @@ export const S2pTextDiv = styled.div`
     margin: auto;
     h3 { 
         font-size: xx-large ; 
-        margin: 15% auto 5%;
         padding-bottom: 3%;
         border-bottom: 3px solid;
         font-family: "Kaushan Script"
     }
-    p { 
-        margin: 15% 5%;
-        text-align: justify;
+    p { text-align: justify; }
+    @media (max-width: 1023px){
+        h3 { margin: 15% auto 5%; }
+        p { margin: 15% 5%; }
+    }
+    @media (min-width: 1024px){
+        h3 { margin: 2% auto 5%; }
+        p { margin: 5%; }
     }
 `
 

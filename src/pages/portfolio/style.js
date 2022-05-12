@@ -30,11 +30,11 @@ export const SelectedTagsList = styled.ul`
         transform: scale(0.85) rotate(-10deg); 
     }
 `
-
+ 
 export const TagsList = styled.ul`
-    margin: 1% auto 2%;
     width: 95%;
     padding: 0;
+    position: relative; 
     &::before {
         content: "Filtrer : ";
         line-height: 28px;
@@ -63,7 +63,7 @@ export const TagsList = styled.ul`
         }
     }
     @media (max-width: 1023px){
-        position: relative; 
+        margin: 10% auto 4%;
         &::before {
             position: absolute;
             left: 5%;
@@ -71,7 +71,7 @@ export const TagsList = styled.ul`
         }
     }
     @media (min-width: 1024px){
-        position: relative; 
+        margin: 1% auto 2%;
         &::before { margin-right: 2%; }
     }
 `

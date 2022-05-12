@@ -9,8 +9,9 @@ export const S2pH2 = styled.h2`
     @media (max-width: 1023px) {
         font-size: medium;
         border-top: 5px solid;
-        padding-top: 2%;
-        padding-right: 1%;
+        padding-top: 1%;
+        padding-right: 5%;
+        margin: 0;
     }
     @media (min-width: 1024px) {
         font-size: xx-large;
@@ -35,9 +36,10 @@ export const S2pPage = styled.div`
     display: flex; 
     flex-direction: column;
     justify-content: space-between;
-    margin: 2% auto;
     padding: 0;
     transform-origin: left center;
+    @media (max-width: 1023px){ margin: 0 auto; }
+    @media (min-width: 1024px){ margin: 2% auto; }
     ${ props => css`
         ${props.$additionalCssRules};
     `}

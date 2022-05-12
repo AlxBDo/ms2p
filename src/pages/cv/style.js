@@ -57,10 +57,10 @@ export const CVH3 = styled.h3`
         padding: 1% 2%;
         background-color: var(--color-error);
         &::before {
-            height: 35px;
+            height: 40px;
             width: 35px;
             background-size: 15px;
-            top: -2px;
+            top: 0px;
         }
     }
     @media (min-width: 1024px){

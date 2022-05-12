@@ -11,7 +11,7 @@ function Home(){
         <Page name={"home"} >
 
             <S2pTextDiv>
-                <h3>🖐🏼 Hello !</h3>
+                <h3>👋🏼 Hello !</h3>
                 <p>
                     Je m'appelle Alexandre Bidaud, j'ai { new Date().getFullYear() - 1979 } ans, j'habite à la Roche-sur-Yon en Vendée 
                     (à 80km au sud de Nantes) et je suis passionné par le développement web depuis quelques années.

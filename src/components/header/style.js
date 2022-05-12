@@ -28,6 +28,7 @@ export const S2pHeader = styled.header`
     @media (min-width: 1024px){
       align-items: flex-start;
       margin: 2% auto;
+      a { margin-top: 5px; }
       h1 { 
         font-size: xx-large; 
       }

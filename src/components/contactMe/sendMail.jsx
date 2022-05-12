@@ -15,12 +15,12 @@ export function submitContactMeForm(e, mailContactInput, msgContactInput, feedba
     e.preventDefault();
     const mailContact = mailContactInput.value
     if(!/([\w-.]+@[\w.]+.{1}[\w]+)/.test(mailContact)){ 
-        makeAFeedback(feedbackOutput, "error", "⚠️ Merci de saisir une adresse mail valide ⚠️")
+        makeAFeedback(feedbackOutput, "error", "⚠️ Merci de saisir une adresse mail valide.")
         return false
     }
     const msgContact = msgContactInput.value
     if(msgContact.length < 15){
-        makeAFeedback(feedbackOutput, "error", "⚠️ Votre message doit contenir au moins 15 caractères ⚠️")
+        makeAFeedback(feedbackOutput, "error", "⚠️ Votre message doit contenir au moins 15 caractères.")
         return false
     }
     setDisplayContactForm("sending")

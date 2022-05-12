@@ -42,7 +42,6 @@ export const ExpArticle = styled.article`
             margin: auto;
             border-radius: 150px;
             p {
-                width: 70%;
                 text-align: center;
                 font-weight: bold;
                 &:last-of-type { color: var(--bg-color-primary); }
@@ -78,7 +77,7 @@ export const ExpArticle = styled.article`
                 max-height: 77px;
                 overflow: hidden;
                 text-overflow: ellipsis;
-                -webkit-line-clamp: 3;
+                -webkit-line-clamp: 2;
                 font-size: large;
                 -webkit-box-orient: vertical;
                 display: -webkit-box;
@@ -89,6 +88,7 @@ export const ExpArticle = styled.article`
     @media (min-width: 1024px){
         width: 100%;
         div:first-child { flex-wrap: wrap; }
+        &.small div:first-child p { width: 100%; }
         p { margin: 4% auto; }
     }
 `
