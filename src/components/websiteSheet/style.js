@@ -213,16 +213,16 @@ export const WebsiteScreenshot = styled.img`
     transition: all 150ms 100ms ease-out;
     width: 60%;
 `
-
+ 
 export const WebsiteTechnology = styled.ul`
     justify-content: center;
     align-item: center;
     transition: all 50ms 150ms ease-out;
     margin: 5px 10px;
     font-size: small;
+    display: flex;
     color: var(--color-secondary);
     @media (max-width: 1023px){
-        display: flex;
         flex-wrap: wrap;
     }
 `

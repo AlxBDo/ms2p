@@ -30,6 +30,12 @@ const linkDef = `
     }
 `
 
+export const ImportantSpan = styled.span`
+    font-size: larger;
+    font-weight: bolder;
+    color: var(--color-secondary);
+`
+
 export const S2pPageIconsCtn = styled.div`
     margin-top: 7%;
     display: flex;
@@ -109,15 +115,6 @@ const welcome = keyframes`
         transform: scale(10) translate(-3px, 346px);
     }
     100%{ transform: scale(9) translate(-3px, 320px); }
-`
-
-const thanks = keyframes`
-    from {
-        transform: scale(10) translate(-3px, 347px);
-    }
-    to {
-        transform: scale(2) translate(-2px, 280px);
-    }
 `
 
 const backToNormal = keyframes`

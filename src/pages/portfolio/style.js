@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const EmptySearchDiv = styled.div`
     margin: 10% auto; 
+    text-align: center;
+    padding: 5%;
     font-size: x-large;
     color: var(--color-error);
 `

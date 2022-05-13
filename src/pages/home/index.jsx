@@ -1,5 +1,5 @@
 import Page from '../../components/page'
-import { S2pPageIconsCtn, S2pPageExternalLink, S2pPageLink, S2pTextDiv } from './style'
+import { ImportantSpan, S2pPageIconsCtn, S2pPageExternalLink, S2pPageLink, S2pTextDiv } from './style'
 
 /**
  * Display home page
@@ -14,14 +14,15 @@ function Home(){
                 <h3>👋🏼 Hello !</h3>
                 <p>
                     Je m'appelle Alexandre Bidaud, j'ai { new Date().getFullYear() - 1979 } ans, j'habite à la Roche-sur-Yon en Vendée 
-                    (à 80km au sud de Nantes) et je suis passionné par le développement web depuis quelques années.
+                    (à 80km au sud de Nantes) et <ImportantSpan>je suis passionné par le développement web </ImportantSpan> 
+                    depuis quelques années.
                 </p>
                 <p>
                     Je "profite" d'un licenciement économique pour me reconvertir professionnellement et vivre de cette passion. 
-                    Je viens d'obtenir une certification de développeur d'application web Font-End / React 
+                    Je viens d'obtenir une <ImportantSpan>certification de développeur d'application web Font-End / React</ImportantSpan> 
                     <span> (
                         <a href="https://www.francecompetences.fr/recherche/rncp/35976/" target="_blank" rel="noreferrer">RNCP 35976</a>
-                    )</span> et je recherche un poste de développeur Web junior ! 
+                    )</span> et je <ImportantSpan>recherche un poste de développeur Web</ImportantSpan> junior ! 
                 </p>
             </S2pTextDiv>
             <S2pPageIconsCtn>

@@ -14,10 +14,10 @@ export const S2pH2 = styled.h2`
         margin: 0;
     }
     @media (min-width: 1024px) {
-        font-size: xx-large;
-        margin: -8% 0 0;
+        font-size: x-large;
+        margin: -8.5% 0 0;
         border-bottom: 5px solid;
-        padding-bottom: 3%;
+        padding-bottom: 6%;
         padding-right: 15%;
     }
 `

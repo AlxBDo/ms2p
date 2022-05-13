@@ -47,7 +47,7 @@ function Portfolio(){
                     </FiltersSection>
                     <WebsitesPorfolio>{ 
                         selected.websites.length === 0 ? (
-                            <EmptySearchDiv>🥶 Aucun site ne correspond à votre recherche 🥶</EmptySearchDiv>
+                            <EmptySearchDiv>Aucun site ne correspond à votre recherche 🥶</EmptySearchDiv>
                         ) : selected.websites.map( website => <WebsiteSheet 
                         competences={ website.competences && website.competences }
                         description={ website.description } 

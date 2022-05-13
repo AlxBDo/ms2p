@@ -47,12 +47,16 @@ export const S2pHeader = styled.header`
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
-        border: 2px solid white;
+        border: none;
         cursor: pointer;
-        background-color: inherit;
+        background-color: var(--bg-color-secondary);
         color: inherit;
         transition: all 150ms linear;
-        &:hover { background-size: 60%; }
+        &:hover { 
+          background-size: 60%;
+          border: 2px solid var(--bg-color-ternary);
+          background-color: inherit; 
+        }
     }
     h1 { font-family: "Permanent Marker";}
     h2 { font-family: "Kaushan Script";}
