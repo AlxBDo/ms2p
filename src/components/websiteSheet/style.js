@@ -34,7 +34,7 @@ export const WebsiteDescription = styled.div`
 `
 
 export const WebsiteName = styled.p`
-    font-size: xx-large; 
+    font-size: x-large; 
     font-weight: bold;
     color: var(--color-link);
 `
@@ -134,7 +134,6 @@ export const WebsiteSheetCont = styled.article`
         }
         div {
             display: flex;
-            &:not(:first-of-type) { margin-bottom: 15px; }
             animation: ${openWSItemHide} 200ms 350ms ease-in-out backwards;
         }
         img:not(li img) {
@@ -168,11 +167,12 @@ export const WebsiteSheetCont = styled.article`
         }
         div, img:not(li img) { width: 90%; }
         img:not(li img) { margin: 20% auto 1%; }
+        &.large div:not(:first-of-type) { margin-bottom: 15px; }
     }
     @media (min-width: 1024px) {
         &.large {
             flex-wrap: wrap;
-            height: 260px;
+            height: 270px;
             a { right: 115px; }
             button {
                 right: 56px;
@@ -200,7 +200,6 @@ export const WebsiteSheetCont = styled.article`
 
 export const WebsiteSheetHeader = styled.div`
     align-items: baseline;
-    margin-top: 1%;
     border-bottom: 2px solid var(--color-link);
     padding-bottom: 1%;
     @media (min-width: 1024px) {

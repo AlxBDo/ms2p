@@ -138,7 +138,7 @@ export const ExpArticleDiv = styled.div`
         &:first-child {
             background: linear-gradient(to right, var(--color-valid) 0%, var(--bg-color-primary) 50%);
             p:first-child { width: 55%; }
-            p:last-of-type { width: 25%; }
+            p:last-of-type { width: 35%; }
             ul {
                 width: 18%;
                 position: absolute;
