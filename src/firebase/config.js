@@ -1,6 +1,7 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 import { getAuth, signInAnonymously } from "firebase/auth";
+import { getAnalytics } from "firebase/analytics"
 
 
 const firebaseConfig = {
@@ -20,3 +21,5 @@ signInAnonymously(auth).then(() => { return true }).catch((error) => {
   });
 
 export const firestoreDb = getFirestore(app) 
+
+const analytics = getAnalytics(app) 
