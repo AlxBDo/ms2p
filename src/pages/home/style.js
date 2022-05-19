@@ -32,10 +32,8 @@ const linkCome = props => keyframes`
         left: 20%; 
         transform: scale(0);
     }
-    100% {
-        top: 500px; 
-        left: ${parseInt(props.animationendposition) + 20}% ;
-    }
+    75% { top: 500px; }
+    100% { left: ${parseInt(props.animationendposition) + 20}% ; }
 `
 
 const pDescriptionCome = keyframes`
