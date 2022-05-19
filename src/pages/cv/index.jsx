@@ -5,7 +5,7 @@ import Page from "../../components/page"
 import Experiences from "../../components/experiences"
 import scrollFunction from "./scrollFunction"
 import { CVH3, CVMenuImg, CVMenuUl, CVSection, InfoPersDiv, menuIcons, scrollingRule } from "./style"
-import homeLogo from '../../assets/tof2profil.png'
+import homeLogo from '../../assets/minime.png'
 
 /**
  * Scroll to element
