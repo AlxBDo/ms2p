@@ -6,8 +6,8 @@ import { ContactMeProvider } from './utils/contactMeContext'
 import { GlobalStyle } from './style'
 import Header from './components/header'
 import Loader from './components/loader'
+import Home from './pages/home'
 
-const Home = lazy( () => import('./pages/home'))
 const Portfolio = lazy( () => import('./pages/portfolio'))
 const CV = lazy( () => import('./pages/cv'))
 

@@ -1,45 +1,7 @@
 import { Link } from 'react-router-dom'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
+import { helloComeDesktop, helloComeMobile, linkComeDesktop, linkComeMobile, pDescriptionCome } from './keyframes'
 
-
-const helloComeDesktop = keyframes`
-    0% { 
-        width: 0px;
-        line-height: 260px;
-    }
-    90% { 
-        width: 873px;
-        line-height: 260px;
-    }
-    100% { line-height: 70px; }
-`
-const helloComeMobile = keyframes`
-    from { 
-        width: 0%;
-        white-space: nowrap;
-    }
-    to { width: 90% }
-`
-
-const linkCome = props => keyframes`
-    0% {
-        opacity: 0;
-    }
-    1% {
-        opacity: 1; 
-        position : absolute ;
-        top: 100px;
-        left: 20%; 
-        transform: scale(0);
-    }
-    75% { top: 500px; }
-    100% { left: ${parseInt(props.animationendposition) + 20}% ; }
-`
-
-const pDescriptionCome = keyframes`
-    from { opacity: 0 ;} 
-    to { opacity: 1; }
-`
 
 const cvIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEoUlEQVR4nO2b32scVRTHP2cn/YG0YEJmd9K8+2CoSG0RS4tVFPEH1jelmlf1wRd9MMVCwCrS9kH8F2wtCP6CKKK2/oC2T1WraLDig8bS3Ts/TLYopdlk5/iQrabtzmRndnbNmPm8ZJl777nnnD33O/fObKCgoKCgYO0iUQ3T07p+eDh4RWEcGOmjT1lSFfRYENiTY2PSaNchMgGu6x1SZKJ3vvUPQQ9XKuX9iQYZ179oXF9d193ZI796jud5u4zrq3H9i4kHtwZqD/zqKyvFUUpmLDhTc/1Tebq2EgNJOoPuvFE0Vvu1eBJVwP+RRBWgcHrpT36upaYQwTVCQhGMx5hgL+jzCNsBEM4S8rrj2B9mOU+WZJaApZ2jXrtzVPYg7DFe8JpTHj7QiR3jBmdAU22+FE6PVOzdScZksgSMCfa2ts0NRSasEqNWiVEV2Q80UH3JGP+RTmwpGnbhSnaalUQEjfG/Mq6vNS+44exQ84IJ4/pqPP+LzJxLQH9EULgDYED06PVNFuGbAGhLF1YZWWnAJgDbtmvXN5TLZWNcH2BzJ4ZyqQFZ0m8NyKQCBOYUBn3f32LbdnV5WxAEo4tNBZjtxFbSb7BbMqkAhW8AFlXGr29bDLl67VwWc2VNVhXwnsJ9onqw5gUMiB6DVkJUX17qpFOd2GqnAWnWdqd0lYBqtXqTZQ1MKrzQurReVA81lUMAsnxJqrxhXP9Oq8Sztm3/GWVT0bDNkbab+7sS8+gvdQI8z9vUVPlYYTcQCvIOMAW6T2EHqICcE+SYovcDTwD7miG3zs7O7hkaGrrUzm6/NSBVAlTVcv1gSpaCNxrKo87I8NlW81tthhw1xhxBrI+A2xuN5nGgo51hr0klgsb74xmUewAXbe4c+Tf4SBzH+cEqcRfwO8LDrus/mWburEmcAN/3N5fQVwFU9DnHcX7tdKxt21UhfBrQECZV1Uo6f9YkTsCi6gMKgyhfj5TL7yYdX6lUPgW+FLjF87zHko7PmrgEtFXekl5du/pB2klV5P2lT9bjaW1kReIKUCn9DPJbGK47nnbSZmP926A/qvBLWhs9p3gmuEZY8wmI2wi13UJ2c15fieV7/rh5Ep4NYrfCyUWwu/P6yuY7myczbYqrgLZZ69dePcN5Yl8XFhoQ09Z3DYhxpJvnAbnSgOhpe8Sq1YAMidWAxEvgv2bZr9eeArZ0OOxyVEOmL0f7wfCwf1CRFxMNEmaimnKXAEXGgVAIt1Uqle+j+s3U64Mb5hdOAWOqRB7b83gbHAEuxwV/4cKloY3zCyeBMeA7S/RIVN+4BKy69b+MSN/m5uZuXreh8YnCNpTzVomHyuXyX1H981gBEOH3TL0+OD+/eAJlB8p5y+Ledu8rVzSUA26ogJl6fXDDlYXPELZ3GjzkNwHX+D1Trw9unF84kTR4yOFdoMU/FVCr1WyZXzipcFvS4CHnFVCr1WwprfuclMFDjivAGFNGBk6Cbk0bPMRXQBWWfnKe2s3eUVKxToFuBaaheXea4CHn/zAh8K1q80HHcby0NiIrIAjsSUEP06qEVUQD4SdUDzQaV3Z1E3xBQUFBwVrnbxGfcJgAWnD4AAAAAElFTkSuQmCC"
 const websiteIcon = "data:image/png;base64,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" 
@@ -72,7 +34,6 @@ const linkDef = `
 `
 
 
-
 export const ImportantSpan = styled.span`
     font-size: larger;
     font-weight: bolder;
@@ -100,8 +61,11 @@ export const S2pPageExternalLink = styled.a`
         background-image: url(${linkedinIcon}); 
         background-color: var(--color-yellow);
     `) }
+    @media (max-width: 1023px){
+        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 1000}ms ease-in-out backwards;
+    }
     @media (min-width: 1024px){
-        animation: ${ props => linkCome} 250ms ${ props => parseInt(props.animationdelay) + 2000}ms ease-in-out backwards;
+        animation: ${ props => linkComeDesktop} 250ms ${ props => parseInt(props.animationdelay) + 2000}ms ease-in-out backwards;
     }
 `
 
@@ -114,23 +78,12 @@ export const S2pPageLink = styled(Link)`
         background-image: url(${websiteIcon}); 
         background-color: var(--color-error); 
     `) }
-    @media (min-width: 1024px){
-        animation: ${ props => linkCome} 250ms ${ props => parseInt(props.animationdelay) + 2000}ms ease-in-out backwards;
+    @media (max-width: 1023px){
+        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 1000}ms ease-in-out backwards;
     }
-`
-
-export const S2pBody = styled.div`
-    text-align: center;
-    overflow: hidden;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
+    @media (min-width: 1024px){
+        animation: ${ props => linkComeDesktop} 250ms ${ props => parseInt(props.animationdelay) + 2000}ms ease-in-out backwards;
+    }
 `
 
 export const S2pTextDiv = styled.div`
@@ -155,10 +108,10 @@ export const S2pTextDiv = styled.div`
         p { 
             margin: 15% 5%; 
             &:first-of-type {
-                animation: ${pDescriptionCome} 250ms 1s ease-in-out backwards;
+                animation: ${pDescriptionCome} 250ms 3500ms ease-in-out backwards;
             }
             &:last-of-type {
-                animation: ${pDescriptionCome} 250ms 1250ms ease-in-out backwards;
+                animation: ${pDescriptionCome} 250ms 4000ms ease-in-out backwards;
             }
         }
     }
@@ -172,13 +125,6 @@ export const S2pTextDiv = styled.div`
             font-size: xxx-large;
             animation: ${ helloComeDesktop } 500ms 250ms ease-in-out backwards;
         }
-        p {
-            &:first-of-type {
-                animation: ${pDescriptionCome} 250ms 4s ease-in-out backwards;
-            }
-            &:last-of-type {
-                animation: ${pDescriptionCome} 250ms 4250ms ease-in-out backwards;
-            }
-        }
+        p { animation: ${pDescriptionCome} 250ms 4s ease-in-out backwards; }
     }
 `

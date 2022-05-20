@@ -1,45 +1,9 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { PageRules } from '../../style'
 import { mailIcon } from '../contactMe/mailIcons'
 import me from '../../assets/me.png'
-
-
-const buttonCome = keyframes`
-  from { transform: scale(0); } 
-  to { transform: scale(1); }
-`
-
-const imgCome = keyframes`
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-`
-
-const linkBorn = color => keyframes`
-  from { 
-    transform: scale(0.9);
-    background-color: var(--bg-color-primary);
-  }
-  to {
-    transform: scale(1);
-    background-color: ${color};
-  }
-`
-
-const titleCome = keyframes`
-  from { 
-    line-height: 0 ; 
-  }
-  to { 
-    line-height: 1; 
-  }
-`
+import { buttonCome, imgCome, linkBorn, titleCome } from './keyframes'
 
 
 export const S2pHeader = styled.header`
@@ -113,7 +77,13 @@ export const S2pHeader = styled.header`
         width: 95%;
         margin: 5% auto;
         &.home {
-          a { margin: auto; }
+          a { 
+            margin: auto; 
+            animation: ${ linkBorn('var(--color-yellow)') } 500ms 1000ms ease-in-out forwards, 
+            ${ linkBorn('var(--color-valid)') } 500ms 1500ms ease-in-out forwards, 
+            ${ linkBorn('var(--color-error)') } 500ms 2000ms ease-in-out forwards, 
+            ${ linkBorn('var(--color-link)') } 500ms 2500ms ease-in-out forwards;
+          }
           button {
             top: -35px;
             transform: scale(0.75);
