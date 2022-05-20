@@ -56,13 +56,6 @@ export const TagsList = styled.ul`
             width: 0; 
             height: 0;
         }
-        &:hover {
-            border-radius: 0;
-            width: auto;
-            margin: 5px 0;
-            opacity: 1;
-            color: var(--color-primary);
-        }
     }
     @media (max-width: 1023px){
         margin: 10% auto 4%;
@@ -75,6 +68,13 @@ export const TagsList = styled.ul`
     @media (min-width: 1024px){
         margin: 1% auto 2%;
         &::before { margin-right: 2%; }
+        li:hover {
+            border-radius: 0;
+            width: auto;
+            margin: 5px 0;
+            opacity: 1;
+            color: var(--color-primary);
+        }
     }
 `
 
