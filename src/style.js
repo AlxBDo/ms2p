@@ -1,6 +1,9 @@
 import { useContext } from 'react'
 import { ThemeContext } from './utils/themeContext'
 import { css, createGlobalStyle } from 'styled-components'
+import KaushanScript from './assets/fonts/KaushanScript-Regular.ttf'
+import PermanentMarker from './assets/fonts/PermanentMarker-Regular.ttf'
+import Prompt from './assets/fonts/Prompt-Regular.ttf'
 
 const { darkColor1, darkColor2, errorColor, lightColor1, lightColor2, linkColor, validColor } = {
     darkColor1: "42, 46, 52", 
@@ -11,7 +14,7 @@ const { darkColor1, darkColor2, errorColor, lightColor1, lightColor2, linkColor,
     linkColor: "#3F88C5",
     validColor: {dark: "#4B8F8C", light: "#88BFBD"},
 }
- 
+
 const colors = {
     light: { 
         color: `rgb(${darkColor1})`, 
@@ -46,6 +49,22 @@ const StyledGlobalStyle = createGlobalStyle`
         --color-valid: ${ ({theme = "light"}) => validColor[theme] };
         --color-yellow: #E1CE7A;
         --translucent-bg-color: ${ ({ theme = "light" }) => colors[theme].translucentBgColor };
+    }
+
+    @font-face{
+        font-family: "Kaushan Script";
+        font-display: swap;
+        src: url(${KaushanScript}) format("truetype");
+    }
+    @font-face{
+        font-family: "Permanent Marker";
+        font-display: swap;
+        src: url(${PermanentMarker}) format("truetype");
+    }
+    @font-face{
+        font-family: "Prompt";
+        font-display: swap;
+        src: url(${Prompt}) format("truetype");
     }
 
     a { color: var(--color-link); }

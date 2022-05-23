@@ -1,9 +1,11 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import Header from '../header'
 import { S2pH2, S2pPage, S2pPageCtn } from './style'
-import ContactMe from '../contactMe'
+import Loader from '../loader'
+
+const ContactMe = lazy( () => import('../contactMe'))
 
 /**
  * Display website page and child's components
@@ -37,7 +39,7 @@ function Page(props) {
                 { name !== "home" && <S2pH2>{ name }</S2pH2>}
                 { children } 
             </S2pPage>
-            <ContactMe />
+            <Suspense fallback={<Loader />}><ContactMe /></Suspense>
         </S2pPageCtn>
     )
 
