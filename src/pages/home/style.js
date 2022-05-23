@@ -62,7 +62,7 @@ export const S2pPageExternalLink = styled.a`
         background-color: var(--color-yellow);
     `) }
     @media (max-width: 1023px){
-        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 1000}ms ease-in-out backwards;
+        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 2000}ms ease-in-out backwards;
     }
     @media (min-width: 1024px){
         animation: ${ props => linkComeDesktop} 250ms ${ props => parseInt(props.animationdelay) + 2000}ms ease-in-out backwards;
@@ -79,7 +79,7 @@ export const S2pPageLink = styled(Link)`
         background-color: var(--color-error); 
     `) }
     @media (max-width: 1023px){
-        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 1000}ms ease-in-out backwards;
+        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 2000}ms ease-in-out backwards;
     }
     @media (min-width: 1024px){
         animation: ${ props => linkComeDesktop} 250ms ${ props => parseInt(props.animationdelay) + 2000}ms ease-in-out backwards;
@@ -103,15 +103,15 @@ export const S2pTextDiv = styled.div`
             margin: 15% auto 5%;
             font-size: xx-large ; 
             padding-bottom: 3%; 
-            animation: ${ helloComeMobile } 250ms 750ms ease-in-out backwards;
+            animation: ${ helloComeMobile } 250ms 1500ms ease-in-out backwards;
         }
         p { 
             margin: 15% 5%; 
             &:first-of-type {
-                animation: ${pDescriptionCome} 250ms 3500ms ease-in-out backwards;
+                animation: ${pDescriptionCome} 250ms 4500ms ease-in-out backwards;
             }
             &:last-of-type {
-                animation: ${pDescriptionCome} 250ms 4000ms ease-in-out backwards;
+                animation: ${pDescriptionCome} 250ms 4750ms ease-in-out backwards;
             }
         }
     }

@@ -25,6 +25,7 @@ export const S2pH2 = styled.h2`
 export const S2pPageCtn = styled.div`
     ${ PageRules }
     margin: 0 auto;
+    &.home { position: relative; }
     ${ (props) => props.$name === "home" && (`
         overflow: hidden;
     `)}

@@ -28,7 +28,7 @@ export const linkComeDesktop = props => keyframes`
         opacity: 1; 
         position : absolute ;
         top: 100px;
-        left: 20%; 
+        left: 0%; 
         transform: scale(0);
     }
     75% { top: 500px; }

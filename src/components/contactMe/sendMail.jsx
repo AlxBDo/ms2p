@@ -22,6 +22,9 @@ export function submitContactMeForm(e, mailContactInput, msgContactInput, feedba
     if(msgContact.length < 15){
         makeAFeedback(feedbackOutput, "error", "⚠️ Votre message doit contenir au moins 15 caractères.")
         return false
+    } else if(/[{}\[\]<>\$]/.test(msgContact)){
+        makeAFeedback(feedbackOutput, "error", "⚠️ Votre message ne doit pas contenir les caractères suivants : {}[]<>$ .")
+        return false
     }
     setDisplayContactForm("sending")
     sendMail(mailContact, msgContact, feedbackOutput, setDisplayContactForm) 

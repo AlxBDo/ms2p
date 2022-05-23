@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
+import { useLocation } from 'react-router-dom'
 import PropTypes from 'prop-types'
+import Header from '../header'
 import { S2pH2, S2pPage, S2pPageCtn } from './style'
 import ContactMe from '../contactMe'
 
@@ -18,6 +20,8 @@ function Page(props) {
 
     const [ scrollPosition, setScrollPosition ] = useState(0)
     const { children, cssRules, name, pageClass, scrollFunction } = props
+    const location = useLocation()
+    const homeClassName = location.pathname === "/" && "home" 
 
     useEffect( () => {
         document.title = `Alexandre Bidaud - ${name}`
@@ -27,7 +31,8 @@ function Page(props) {
     if(scrollPosition > 0){ scrollFunction(scrollPosition) }
  
     return(
-        <S2pPageCtn $name={ name }>
+        <S2pPageCtn $name={ name } className={ homeClassName }>
+            <Header htmlClass={ homeClassName } />
             <S2pPage id={`${name}-page`} $additionalCssRules={ cssRules } className={ pageClass && pageClass }> 
                 { name !== "home" && <S2pH2>{ name }</S2pH2>}
                 { children } 
