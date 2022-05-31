@@ -29,6 +29,9 @@ export const S2pPageCtn = styled.div`
     ${ (props) => props.$name === "home" && (`
         overflow: hidden;
     `)}
+    ${ props => css`
+        ${props.$additionalCssRules};
+    `}
 `
 
 export const S2pPage = styled.div`
@@ -41,7 +44,4 @@ export const S2pPage = styled.div`
     transform-origin: left center;
     @media (max-width: 1023px){ margin: 0 auto; }
     @media (min-width: 1024px){ margin: 2% auto; }
-    ${ props => css`
-        ${props.$additionalCssRules};
-    `}
 `

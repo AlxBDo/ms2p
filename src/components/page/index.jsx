@@ -1,11 +1,8 @@
-import { lazy, Suspense, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import Header from '../header'
 import { S2pH2, S2pPage, S2pPageCtn } from './style'
-import Loader from '../loader'
 
-const ContactMe = lazy( () => import('../contactMe'))
 
 /**
  * Display website page and child's components
@@ -21,25 +18,24 @@ const ContactMe = lazy( () => import('../contactMe'))
 function Page(props) {
 
     const [ scrollPosition, setScrollPosition ] = useState(0)
-    const { children, cssRules, name, pageClass, scrollFunction } = props
-    const location = useLocation()
-    const homeClassName = location.pathname === "/" && "home" 
-
+    const { children, containerClass, cssRules, name, pageClass, scrollFunction } = props
+    
     useEffect( () => {
         document.title = `Alexandre Bidaud - ${name}`
-        if(scrollFunction){ window.addEventListener("scroll", () => setScrollPosition(window.pageYOffset)) }
+        window.addEventListener("scroll", () => setScrollPosition(window.pageYOffset))
     })
 
-    if(scrollPosition > 0){ scrollFunction(scrollPosition) }
+    scrollPosition > 0 && scrollFunction && scrollFunction(scrollPosition)
  
     return(
-        <S2pPageCtn $name={ name } className={ homeClassName }>
-            <Header htmlClass={ homeClassName } />
-            <S2pPage id={`${name}-page`} $additionalCssRules={ cssRules } className={ pageClass && pageClass }> 
+        <S2pPageCtn id="page-ctn" $name={ name } $additionalCssRules={ cssRules } className={ containerClass } onWheel={ e => {
+            e.deltaY < 0 ? document.getElementById("page-ctn").classList.add("intro") : document.getElementById("page-ctn").classList.remove("intro")
+        }}>
+            <Header htmlClass={ containerClass } />
+            <S2pPage id={`${name}-page`} className={ pageClass && pageClass }> 
                 { name !== "home" && <S2pH2>{ name }</S2pH2>}
                 { children } 
             </S2pPage>
-            <Suspense fallback={<Loader />}><ContactMe /></Suspense>
         </S2pPageCtn>
     )
 

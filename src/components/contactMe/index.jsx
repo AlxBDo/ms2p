@@ -12,8 +12,8 @@ function ContactMe(){
 
     const { displayContactForm, setDisplayContactForm } = useContext(ContactMeContext)
 
-    return (
-        <ContactFormCtn className={ displayContactForm ? displayContactForm : "hidden" }>
+    return displayContactForm && (
+        <ContactFormCtn className={ displayContactForm }>
             <ContactForm id="mail-box" onSubmit={ (e) => submitContactMeForm(
                 e,
                 document.getElementById("contact-mail"), 

@@ -6,6 +6,7 @@ import { ContactMeProvider } from './utils/contactMeContext'
 import { GlobalStyle } from './style'
 import Loader from './components/loader'
 
+const ContactMe = lazy( () => import('./components/contactMe'))
 const Home = lazy( () => import('./pages/home'))
 const Portfolio = lazy( () => import('./pages/portfolio'))
 const CV = lazy( () => import('./pages/cv'))
@@ -19,6 +20,7 @@ root.render(
         <GlobalStyle />
         <ContactMeProvider>
           <Suspense fallback={<Loader />}>
+            <ContactMe />
             <Routes>
               <Route exact path="/" element={<Home />} />
               <Route exact path="/portfolio" element={<Portfolio />} />

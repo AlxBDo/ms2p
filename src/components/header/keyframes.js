@@ -1,25 +1,6 @@
 import { keyframes } from "styled-components";
 
 
-export const animImgBorder = color => keyframes`
-  0% { border-top-color : ${color}; }
-  33% { 
-    border-top-color : ${color};
-    border-right-color : ${color}; 
-  }
-  66% { 
-    border-top-color : ${color};
-    border-right-color : ${color}; 
-    border-bottom-color : ${color}; 
-  }
-  100% { 
-    border-top-color : ${color};
-    border-right-color : ${color}; 
-    border-bottom-color : ${color}; 
-    border-left-color : ${color}; 
-  }
-`
-
 export const buttonBackToNormal = keyframes`
   to { position : unset;  }
 `

@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { WebsiteDescription, WSDiplayBtn, WebsiteName, WebsiteSheetCont, WebsiteSheetHeader, WebsiteScreenshot, WebsiteTechnology, WebsiteTechnologyLi, WebsiteUrl, WebsiteYear } from "./style"
 import TechnologyBadge from "./technologyBadge"
 
+
 /**
  * Provided className and text to "show more/less" buttom 
  * @param {boolean} showMore 
@@ -57,7 +58,7 @@ function WebsiteSheet(props){
             <WebsiteUrl id={`${docId}-link`} href={ url } target="_blank" />
             <WSDiplayBtn onClick={ (e) => {
                 setShowMore(!showMore)
-                setTimeout(() => e.target.scrollIntoView({block: "start", behavior: "smooth"}), 250)
+                !showMore && setTimeout(() => e.target.scrollIntoView({block: "start", behavior: "smooth"}), 250)
             } }>{ text }</WSDiplayBtn>
         </WebsiteSheetCont>
     )
