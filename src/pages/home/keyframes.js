@@ -43,75 +43,12 @@ export const helloComeMobile = keyframes`
 `
 
 export const linkComeDesktop = props => keyframes`
-    0% {
-        opacity: 0;
-    }
-    1% {
-        opacity: 1; 
-        position : absolute ;
-        top: 100px;
-        left: 0%; 
-        transform: scale(0);
-    }
-    75% { top: 500px; }
-    100% { left: ${parseInt(props.animationendposition) + 20}% ; }
-`
-
-export const linkComeDesktopNew = props => keyframes`
-    0% { 
-        width: 0;
-        overflow: hidden;
-        padding: 0; 
-        margin: 0;
-    }
-    1% {
-        width: 100px;
-        margin: auto 0;
-        padding: 35px 25px 50px;
-        transform: translate(75px, -343px) scale(0.25) rotate(0deg);
-    }
-    50% { transform: translate(${700 + (parseInt(props.animationposition)*20)}px, -362px) scale(0.5) rotate(360deg); }
-    52% { transform: translate(${700 + (parseInt(props.animationposition)*20)}px, 0px) scale(0.55) rotate(451deg); }
-    99% { 
-        transform: translate(${parseInt(props.animationendposition+0)}px, 0px) scale(1) rotate(-360deg); 
-        margin: 0;
-    }
-    100% { 
-        transform: translate(0px, 0px); 
-        margin: auto;
-    }
-`
-
-export const linkComeDesktopNew1 = props => keyframes`
-    0% { 
-        width: 0;
-        overflow: hidden;
-        padding: 0; 
-        margin: 0;
-    }
-    1% {
-        transform: translate(${ props.animationposition === "1" ? 75 : -560 + (45 * (1 - parseInt(props.animationposition)) + (-45 * (parseInt(props.animationposition) - 1))) }px, -343px) scale(0.25) rotate(0deg);
-        width: 100px;
-        margin: auto 0;
-        padding: 35px 25px 50px;
-    }
-    50% { transform: translate(${ props.animationposition === "1" ? 830 : 0 }px, -362px) scale(0.5) rotate(360deg); }
-    55% { 
-        margin: auto 0;
-        transform: translate(${ props.animationendposition }px, 0px) scale(0.55) rotate(450deg); 
-    }
-    100% { 
-        transform: translate(0px, 0px) scale(1) rotate(0deg); 
-        margin: auto 0;
-    }
-`
-
-export const linkComeDesktopNew2 = props => keyframes`
     0% { opacity: 0; }
     1% {
         transform: translate(${ 80 - (255 * (parseInt(props.animationposition) - 1)) }px, -343px) scale(0.25) rotate(0deg);
         width: 100px;
         padding: 35px 25px 50px;
+        opacity: 1;
     }
     50% { transform: translate(${ 830 - (255 * (parseInt(props.animationposition) - 1)) }px, -362px) scale(0.5) rotate(360deg); }
     55% { 
@@ -140,14 +77,14 @@ export const linkComeMobile = keyframes`
 
 export const pDescriptionCome = keyframes`
     from { 
-        transform: scaleY(0);
-        transform-origin: top;
+        transform: scale(0);
+        transform-origin: center;
         opacity: 0 ;
     } 
     to { 
         opacity: 1;
-        transform: scaleY(1);
-        transform-origin: top; 
+        transform: scale(1);
+        transform-origin: center; 
     }
 `
 
@@ -193,10 +130,6 @@ export const linkBorn = color => keyframes`
 `
 
 export const titleCome = keyframes`
-  from { 
-    line-height: 0 ; 
-  }
-  to { 
-    line-height: 1; 
-  }
+  from { line-height: 0 ; }
+  to { line-height: 1; }
 `

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 import { PageRules } from '../../style'
 import { mailIcon } from '../contactMe/mailIcons'
+import { PageLink } from '../pageLink'
 
 
 export const S2pHeader = styled.header`
@@ -14,17 +14,13 @@ export const S2pHeader = styled.header`
     z-index: 9;
     transition: all 500ms ease-in-out;
     ${ PageRules }
-    &:not(.intro, .home){
-      height: 100px;
-      a { margin-top: 5px; }
-      button { border: none; }
-    }
+    a { margin-top: 5px; }
     button {
         background-image: url(${mailIcon});
         height: 65px;
         width: 65px;
-        border-radius: 38px;
-        content: "contact";
+        border-radius: 38px; 
+        border: none;
         background-size: 50%;
         background-position: center;
         background-repeat: no-repeat;
@@ -53,30 +49,17 @@ export const S2pHeader = styled.header`
     @media (max-width: 1023px) {
       width: 95%;
       margin: 5% auto;
-      &:not(.intro){
-        h2 {
-          max-width: 165px;
-          white-space: pre-wrap;
-        }
-      }
       h1 { font-size: x-large; }
       h2 { font-size: medium; }
     }
     @media (min-width: 1024px){
       align-items: flex-start;
       margin: 2% auto;
-      &:not(.intro) {
-        a { margin-top: 5px; }
-        h1, h2 { 
-          width: 80%;
-          text-align: left; 
-        }
-      }
       h1 { font-size: xx-large; }
       h2 { font-size: x-large; }
     }
 `
 
-export const S2pHeaderLink = styled(Link)`
+export const HeaderLink = styled(PageLink)`
       color: var(--color-link);
 `

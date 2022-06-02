@@ -103,7 +103,9 @@ export const CVMenuUl = styled.ul`
         margin: 0 5px;
         background-color: var(--color-link);
         display: block;
-        padding: 10px 10px 6px;
+        width: 25px;
+        height: 25px;
+        padding: 10px;
         border-radius: 50px;
         transform: scale(0.6);
         transition: all 250ms linear;

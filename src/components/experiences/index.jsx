@@ -18,6 +18,11 @@ function Experiences(props){
     const params = name === "Formations" ? { fSCollectionName: "formations", id: "form", scrollAdd: 1000 } 
     : { fSCollectionName: "experiences", id: "exp", scrollAdd: 300 }
     const { data, isLoading } = UseFirestore(params.fSCollectionName, collectorFunction) 
+    const formatToggle = e => {
+        const element = e.target
+        element.classList.toggle("small")
+        setTimeout(() => element.scrollIntoView({block: "center", behavior: "smooth"}), 150)
+    }
 
     data && data.sort( (a, b) => {
         const aDate = a.dates ? a.dates.end : a.date 
@@ -29,11 +34,7 @@ function Experiences(props){
         <CVSection>
             <CVH3 id={`${params.id}-section-title`}>{ name }</CVH3>
             { data.map( exp => (
-                <ExpArticle key={`${exp.id}-experience`} className={"small"} onClick={ e => {
-                    const element = e.target
-                    element.classList.toggle("small")
-                    setTimeout(() => element.scrollIntoView({block: "center", behavior: "smooth"}), 150)
-                } }>
+                <ExpArticle key={`${exp.id}-experience`} className={"small"} onClick={ formatToggle }>
                     <ExpArticleDiv>
                         <ExpArticleP $name={"entitled"}>{ exp.entitled }</ExpArticleP>
                         <ExpArticleP $name={"entity"}>{ exp.entity }</ExpArticleP> 
@@ -48,7 +49,9 @@ function Experiences(props){
                     <ExpArticleDiv>
                         { exp.description && exp.description.indexOf("*") > 0 
                         ? exp.description.split("*").map( 
-                            (d, index) => <ExpArticleP key={`${name}-desc-${index}`} $name={"description"}> { index > 0 && " - " }{ d }</ExpArticleP> 
+                            (d, index) => <ExpArticleP key={`${name}-desc-${index}`} $name={"description"} className={index > 0 && "sub-desc-p"}> 
+                                { index > 0 && " - " }{ d }
+                            </ExpArticleP> 
                         ) : <ExpArticleP $name={"description"}>{ exp.description }</ExpArticleP> }
                         <ExpArticleUl key={`${exp.id}-skills`} $name={"skills"}>{
                             exp.skills.map( (skill, index) => <li key={`${exp.id}-skill-${index}`}>{ skill }</li> )

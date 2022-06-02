@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom'
 import styled, { css } from 'styled-components'
 import me from '../../assets/me-circle.png'
-import { buttonCome, headerBackToNormal, imgBackToNormal, imgCome, linkBorn, titleCome, helloBackToNormal, helloComeDesktop, helloComeMobile, linkComeDesktopNew2, linkComeMobile, pDescriptionCome } from './keyframes'
+import { 
+    buttonCome, 
+    headerBackToNormal, 
+    imgBackToNormal, 
+    imgCome, 
+    linkBorn, 
+    titleCome, 
+    helloBackToNormal, 
+    helloComeDesktop, 
+    helloComeMobile, 
+    linkComeDesktop, 
+    linkComeMobile, 
+    pDescriptionCome 
+} from './keyframes'
 
 
 const cvIcon = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABmJLR0QA/wD/AP+gvaeTAAAEoUlEQVR4nO2b32scVRTHP2cn/YG0YEJmd9K8+2CoSG0RS4tVFPEH1jelmlf1wRd9MMVCwCrS9kH8F2wtCP6CKKK2/oC2T1WraLDig8bS3Ts/TLYopdlk5/iQrabtzmRndnbNmPm8ZJl777nnnD33O/fObKCgoKCgYO0iUQ3T07p+eDh4RWEcGOmjT1lSFfRYENiTY2PSaNchMgGu6x1SZKJ3vvUPQQ9XKuX9iQYZ179oXF9d193ZI796jud5u4zrq3H9i4kHtwZqD/zqKyvFUUpmLDhTc/1Tebq2EgNJOoPuvFE0Vvu1eBJVwP+RRBWgcHrpT36upaYQwTVCQhGMx5hgL+jzCNsBEM4S8rrj2B9mOU+WZJaApZ2jXrtzVPYg7DFe8JpTHj7QiR3jBmdAU22+FE6PVOzdScZksgSMCfa2ts0NRSasEqNWiVEV2Q80UH3JGP+RTmwpGnbhSnaalUQEjfG/Mq6vNS+44exQ84IJ4/pqPP+LzJxLQH9EULgDYED06PVNFuGbAGhLF1YZWWnAJgDbtmvXN5TLZWNcH2BzJ4ZyqQFZ0m8NyKQCBOYUBn3f32LbdnV5WxAEo4tNBZjtxFbSb7BbMqkAhW8AFlXGr29bDLl67VwWc2VNVhXwnsJ9onqw5gUMiB6DVkJUX17qpFOd2GqnAWnWdqd0lYBqtXqTZQ1MKrzQurReVA81lUMAsnxJqrxhXP9Oq8Sztm3/GWVT0bDNkbab+7sS8+gvdQI8z9vUVPlYYTcQCvIOMAW6T2EHqICcE+SYovcDTwD7miG3zs7O7hkaGrrUzm6/NSBVAlTVcv1gSpaCNxrKo87I8NlW81tthhw1xhxBrI+A2xuN5nGgo51hr0klgsb74xmUewAXbe4c+Tf4SBzH+cEqcRfwO8LDrus/mWburEmcAN/3N5fQVwFU9DnHcX7tdKxt21UhfBrQECZV1Uo6f9YkTsCi6gMKgyhfj5TL7yYdX6lUPgW+FLjF87zHko7PmrgEtFXekl5du/pB2klV5P2lT9bjaW1kReIKUCn9DPJbGK47nnbSZmP926A/qvBLWhs9p3gmuEZY8wmI2wi13UJ2c15fieV7/rh5Ep4NYrfCyUWwu/P6yuY7myczbYqrgLZZ69dePcN5Yl8XFhoQ09Z3DYhxpJvnAbnSgOhpe8Sq1YAMidWAxEvgv2bZr9eeArZ0OOxyVEOmL0f7wfCwf1CRFxMNEmaimnKXAEXGgVAIt1Uqle+j+s3U64Mb5hdOAWOqRB7b83gbHAEuxwV/4cKloY3zCyeBMeA7S/RIVN+4BKy69b+MSN/m5uZuXreh8YnCNpTzVomHyuXyX1H981gBEOH3TL0+OD+/eAJlB8p5y+Ledu8rVzSUA26ogJl6fXDDlYXPELZ3GjzkNwHX+D1Trw9unF84kTR4yOFdoMU/FVCr1WyZXzipcFvS4CHnFVCr1WwprfuclMFDjivAGFNGBk6Cbk0bPMRXQBWWfnKe2s3eUVKxToFuBaaheXea4CHn/zAh8K1q80HHcby0NiIrIAjsSUEP06qEVUQD4SdUDzQaV3Z1E3xBQUFBwVrnbxGfcJgAWnD4AAAAAElFTkSuQmCC"
@@ -36,6 +48,9 @@ const linkDef = `
 `
 
 export const Intro = css`
+    .exit-page h3 {
+        transform: scale(0);
+    }
     &.intro {
         header {
             margin-top: 50px;
@@ -45,7 +60,7 @@ export const Intro = css`
                 height: 230px;
                 width: 230px;
                 border-radius: 130px;
-                border: 3px solid white;
+                border: 3px solid var(--color-primary);
                 background-position: center;
                 background-size: 150px;
                 background-repeat: no-repeat;
@@ -114,14 +129,7 @@ export const Intro = css`
         }
     }
     &:not(.intro) {
-        header {
-            height: 100px;
-            a { 
-                margin-top: 5px; 
-                animation: all 500ms ease-in-out;
-            }
-            button { border: none; }
-        }
+        header a { animation: all 500ms ease-in-out; }
         @media (max-width: 1023px) {
             header {
                 h2 {
@@ -133,14 +141,12 @@ export const Intro = css`
         @media (min-width: 1024px){
             h3 {
                 top: auto;
-                margin-left: 4.5%;
                 border-bottom: none;
                 border-top: 3px solid;
                 padding-top: 50px;
                 animation: ${ helloBackToNormal } 500ms ease-in-out backwards;
             }
             header {
-                a { margin-top: 5px; }
                 h1, h2 { 
                   width: 80%;
                   text-align: left; 
@@ -157,6 +163,23 @@ export const Intro = css`
                 }
             }
         }
+    }
+`
+
+export const AdditionnalPageLinkRules = props => css`
+    ${ linkDef }
+    ${ props => props.name === "cv" ? (`
+        background-image: url(${cvIcon}); 
+        background-color: var(--color-link);
+    `) : (`
+        background-image: url(${websiteIcon}); 
+        background-color: var(--color-error); 
+    `) }
+    @media (max-width: 1023px){
+        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 2000}ms ease-in-out backwards;
+    }
+    @media (min-width: 1024px){
+        animation: ${ props => linkComeDesktop} 1s ${ props => (parseInt(props.animationposition) * 500) + 1500}ms ease-in-out backwards;
     }
 `
 
@@ -192,24 +215,7 @@ export const S2pPageExternalLink = styled.a`
         animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 2000}ms ease-in-out backwards;
     }
     @media (min-width: 1024px){
-        animation: ${ props => linkComeDesktopNew2} 1s ${ props => (parseInt(props.animationposition) * 500) + 1500}ms ease-in-out backwards;
-    }
-`
-
-export const S2pPageLink = styled(Link)`
-    ${ linkDef }
-    ${ props => props.name === "cv" ? (`
-        background-image: url(${cvIcon}); 
-        background-color: var(--color-link);
-    `) : (`
-        background-image: url(${websiteIcon}); 
-        background-color: var(--color-error); 
-    `) }
-    @media (max-width: 1023px){
-        animation: ${ props => linkComeMobile} 500ms ${ props => (1500 - parseInt(props.animationdelay)) + 2000}ms ease-in-out backwards;
-    }
-    @media (min-width: 1024px){
-        animation: ${ props => linkComeDesktopNew2} 1s ${ props => (parseInt(props.animationposition) * 500) + 1500}ms ease-in-out backwards;
+        animation: ${ props => linkComeDesktop} 1s ${ props => (parseInt(props.animationposition) * 500) + 1500}ms ease-in-out backwards;
     }
 `
 
@@ -236,6 +242,11 @@ export const S2pTextDiv = styled.div`
     }
 `
 
+export const SecondaryInformationSpan = styled.span`
+    font-size: smaller;
+    font-style: italic;
+`
+
 export const TitleH3 = styled.h3`
     border-bottom: 3px solid;
     font-family: "Kaushan Script";
@@ -252,7 +263,7 @@ export const TitleH3 = styled.h3`
         top: 25px;
         width: 873px;
         height: 100px;
-        margin-left: 7.5%;
+        margin-left: 86px;
         text-align: center;
         font-size: xxx-large;
         animation: ${ helloComeDesktop } 500ms 250ms ease-in-out backwards;

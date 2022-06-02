@@ -18,7 +18,7 @@ import { S2pH2, S2pPage, S2pPageCtn } from './style'
 function Page(props) {
 
     const [ scrollPosition, setScrollPosition ] = useState(0)
-    const { children, containerClass, cssRules, name, pageClass, scrollFunction } = props
+    const { children, containerClass, cssRules, name, onWheelFunction, pageClass, scrollFunction } = props
     
     useEffect( () => {
         document.title = `Alexandre Bidaud - ${name}`
@@ -28,10 +28,8 @@ function Page(props) {
     scrollPosition > 0 && scrollFunction && scrollFunction(scrollPosition)
  
     return(
-        <S2pPageCtn id="page-ctn" $name={ name } $additionalCssRules={ cssRules } className={ containerClass } onWheel={ e => {
-            e.deltaY < 0 ? document.getElementById("page-ctn").classList.add("intro") : document.getElementById("page-ctn").classList.remove("intro")
-        }}>
-            <Header htmlClass={ containerClass } />
+        <S2pPageCtn id="page-ctn" $name={ name } $additionalCssRules={ cssRules } className={ containerClass } onWheel={ onWheelFunction }>
+            <Header />
             <S2pPage id={`${name}-page`} className={ pageClass && pageClass }> 
                 { name !== "home" && <S2pH2>{ name }</S2pH2>}
                 { children } 

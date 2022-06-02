@@ -10,7 +10,11 @@ import { submitContactMeForm } from './sendMail'
  */
 function ContactMe(){
 
-    const { displayContactForm, setDisplayContactForm } = useContext(ContactMeContext)
+    const { displayContactForm, setDisplayContactForm } = useContext(ContactMeContext) 
+    const closeFormFunction = (e) => {
+        e.preventDefault() 
+        setDisplayContactForm(false)
+    } 
 
     return displayContactForm && (
         <ContactFormCtn className={ displayContactForm }>
@@ -25,10 +29,8 @@ function ContactMe(){
                 <input type="email" placeholder="Votre mail" id="contact-mail" />
                 <textarea placeholder="Votre message" id="contact-msg"></textarea>
                 <div>
-                    <ContactFormBtn $name={"close"} onClick={(e) => {
-                        e.preventDefault() 
-                        setDisplayContactForm(false)
-                    }}></ContactFormBtn> <ContactFormBtn $name={"send"}></ContactFormBtn>
+                    <ContactFormBtn $name={"close"} onClick={ closeFormFunction }></ContactFormBtn> 
+                    <ContactFormBtn $name={"send"}></ContactFormBtn>
                 </div>
             </ContactForm>
             <FormFeedback id="form-feedback"></FormFeedback>

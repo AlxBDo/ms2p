@@ -1,11 +1,11 @@
 import React, { useContext } from "react" 
-import { Link } from "react-router-dom"
 import { ThemeContext } from "../../utils/themeContext"
 import Page from "../../components/page"
 import Experiences from "../../components/experiences"
 import scrollFunction from "./scrollFunction"
 import { CVH3, CVMenuImg, CVMenuUl, CVSection, InfoPersDiv, menuIcons, scrollingRule } from "./style"
 import homeLogo from '../../assets/minime.png'
+import { PageLink } from "../../components/pageLink"
 
 /**
  * Scroll to element
@@ -25,9 +25,9 @@ function CV() {
     return (
         <Page name={"cv"} scrollFunction={ scrollFunction } cssRules={scrollingRule}>
             <CVMenuUl id={"cv-menu"}>
-                <li><Link to="/">
+                <li><PageLink to="/">
                     <CVMenuImg src={ homeLogo } title={"Page d'accueil"} alt={"Page d'accueil"} />
-                </Link></li>
+                </PageLink></li>
                 <li onClick={() => window.scroll({top: 215, behavior: "smooth"}) }>
                     <CVMenuImg src={ menuIcons.about[theme] } title={"Informations personnelles"} alt={"Informations personnelles"} />
                 </li>

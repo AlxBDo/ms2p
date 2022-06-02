@@ -31,7 +31,8 @@ const technologyList = {
     github: { name: "GitHub", src: "https://img.shields.io/badge/GitHub-7dd372?style=for-the-badge&logo=github&logoColor=white" }, 
     netlify: { name: "Netlify", src: "https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white" }, 
     postman: { name: "Postman", src: "https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=Postman&logoColor=white" }, 
-    vscode: { name: "Visual Studio Code", src: "https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" }
+    vscode: { name: "Visual Studio Code", src: "https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" }, 
+    wordpress: { name: "WordPress", src: "https://img.shields.io/badge/Wordpress-21759B?style=for-the-badge&logo=wordpress&logoColor=white" }
 }
 
 /**
