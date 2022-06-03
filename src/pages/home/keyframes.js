@@ -36,10 +36,10 @@ export const helloComeDesktop = keyframes`
 `
 export const helloComeMobile = keyframes`
     from { 
-        width: 0%;
+        transform: scaleX(0);
         white-space: nowrap;
     }
-    to { width: 90% }
+    to { transform: scaleX(1);  }
 `
 
 export const linkComeDesktop = props => keyframes`
@@ -62,12 +62,10 @@ export const linkComeDesktop = props => keyframes`
 export const linkComeMobile = keyframes`
     0% {
         padding: 0;
-        height: 0;
         transform: scale(0);
     }
     75% {
         padding: 35px 25px 50px;
-        height: 65px; 
         transform: scale(1.5);
     }
     100% { 

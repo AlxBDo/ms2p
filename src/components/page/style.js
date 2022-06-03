@@ -4,11 +4,11 @@ import { PageRules } from '../../style'
 
 const pageCome = keyframes`
     from { 
-        transform: rotateX(90deg); 
+        transform: translateX(-1100px); 
         opacity: 0;
     }
     to { 
-        transform: rotateX(0deg); 
+        transform: translateX(0); 
         opacity: 1;
     }
 `
@@ -70,12 +70,12 @@ export const S2pPage = styled.div`
     flex-direction: column;
     justify-content: space-between;
     padding: 0;
-    transform-origin: top center;
+    transform-origin: center center;
     transition: all 500ms ease-in-out ;
     &.exit-page {
         perspective: 1000px;
-        transform-origin: bottom center;
-        transform: rotateX(-90deg);
+        transform-origin: center center;
+        transform: translateX(1100px);
         opacity: 0;
     }
     @media (max-width: 1023px){ margin: 0 auto; }

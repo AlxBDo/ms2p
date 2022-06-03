@@ -37,9 +37,7 @@ export const imgCome = keyframes`
 `
 
 export const linkBorn = color => keyframes`
-  from { 
-    transform: scale(0.55);
-  }
+  from { transform: scale(0.55); }
   to { background-color: ${color}; }
 `
 

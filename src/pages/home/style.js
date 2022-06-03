@@ -67,12 +67,6 @@ export const Intro = css`
                 margin-left: 2%;
                 img { transform: scale(0) }
             }
-            button {
-                position: absolute;
-                right: 0px;
-                border: 3px solid;
-                animation: ${buttonCome} 250ms 800ms ease-in backwards;
-            }
             h1, h2 { overflow: hidden;  }
             @media (max-width: 1023px) {
                 animation: ${headerBackToNormal} 250ms 1250ms linear forwards; 
@@ -85,11 +79,11 @@ export const Intro = css`
                   ${ linkBorn('var(--color-error)') } 500ms 3000ms ease-in-out forwards, 
                   ${ linkBorn('var(--color-link)') } 500ms 3500ms ease-in-out forwards;
                 }
-                button { transform: scale(0.75); }
-                h1, h2 { 
-                    text-align: center;
-                    margin-right: 20%;
+                button { 
+                    transform: scale(0.75); 
+                    animation: ${buttonCome} 250ms 1500ms ease-in backwards;
                 }
+                h1, h2 { text-align: center; }
                 h1 { animation: ${titleCome} 250ms 250ms ease-in-out backwards; }
                 h2 { animation: ${titleCome} 250ms 500ms ease-in-out backwards; }
             }
@@ -101,6 +95,12 @@ export const Intro = css`
                   ${ linkBorn('var(--color-error)') } 500ms 2500ms ease-in-out forwards, 
                   ${ linkBorn('var(--color-valid)') } 500ms 3000ms ease-in-out forwards,  
                   ${ linkBorn('var(--color-yellow)') } 500ms 3500ms ease-in-out forwards;
+                }
+                button {
+                    border: 3px solid;
+                    position: absolute;
+                    right: 0px;
+                    animation: ${buttonCome} 250ms 800ms ease-in backwards;
                 }
                 h1 { animation: ${titleCome} 250ms 1s ease-in-out backwards; }
                 h1, h2 { margin-top: 175px; }
@@ -256,6 +256,7 @@ export const TitleH3 = styled.h3`
         font-size: xx-large ; 
         padding-bottom: 3%; 
         width: 80%;
+        transform-origin: left;
         animation: ${ helloComeMobile } 250ms 1500ms ease-in-out backwards;
     }
     @media (min-width: 1024px){
