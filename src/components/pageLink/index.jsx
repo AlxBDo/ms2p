@@ -17,7 +17,7 @@ export const PageLink = ({ animationdelay, animationendposition, animationpositi
     const addExistClass = e => {
         e.preventDefault()
         document.getElementById(`${currentPage !== "" ? currentPage : "home"}-page`).classList.add("exit-page")
-        setTimeout( () => navigate(to), 500)
+        setTimeout( () => navigate(to), 250)
     } 
 
     return <StyledLink

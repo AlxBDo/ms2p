@@ -38,7 +38,7 @@ export const S2pPageCtn = styled.div`
     margin: 0 auto;
     #cv-page, #portfolio-page {
         transform-origin: top center;
-        animation: ${ pageCome } 500ms ease-out backwards
+        animation: ${ pageCome } 250ms ease-out backwards
     }
     &:not(.intro) header {
         height: 100px;
