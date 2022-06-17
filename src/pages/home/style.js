@@ -183,7 +183,6 @@ export const AdditionnalPageLinkRules = props => css`
     }
 `
 
-
 export const ImportantSpan = styled.span`
     font-size: larger;
     font-weight: bolder;

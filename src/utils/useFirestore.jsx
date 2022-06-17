@@ -16,9 +16,11 @@ function UseFirestore(collectionName, collectorFunction = false){
             docs.forEach( (doc) => documents.push({id: doc.id, ...doc.data()}))
             return documents
         }
-    }  
+    }
+
     useEffect(() => {
-        if(isLoading){ 
+        if(isLoading && collectionName){  
+
             import("firebase/firestore").then(firestore => {
                 import("../firebase/config").then( (db) => {
                     firestore.getDocs(firestore.collection(db.firestoreDb, collectionName)).then( (docs) => {
@@ -27,6 +29,7 @@ function UseFirestore(collectionName, collectorFunction = false){
                     })
                 })
             })
+
         }
     }, [ collectionName, collectorFunction, isLoading])
 

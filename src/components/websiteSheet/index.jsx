@@ -36,7 +36,7 @@ function WebsiteSheet(props){
     const { className, text } = getShowParams(showMore)
     const formatToggle = (e) => {
         setShowMore(!showMore)
-        !showMore && setTimeout(() => e.target.scrollIntoView({block: "start", behavior: "smooth"}), 250)
+        !showMore && setTimeout(() => window.scrollTo({top: e.target.getBoundingClientRect().y, behavior: "smooth"}), 350)
     }
 
     return (

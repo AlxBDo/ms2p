@@ -11,7 +11,7 @@ import { S2pHeader, HeaderLink } from './style'
 function Header() {
     
     const { setDisplayContactForm } = useContext(ContactMeContext)
-    const contactMeFunction = (e) => { 
+    const contactMeFunction = (e) => {
         e.preventDefault()
         setDisplayContactForm("open") 
     }

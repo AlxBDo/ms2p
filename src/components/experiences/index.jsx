@@ -21,7 +21,7 @@ function Experiences(props){
     const formatToggle = e => {
         const element = e.target
         element.classList.toggle("small")
-        setTimeout(() => element.scrollIntoView({block: "center", behavior: "smooth"}), 150)
+        setTimeout(() => window.scrollTo({ top: element.offsetTop - 85, behavior: "smooth"} ), 150)
     }
 
     data && data.sort( (a, b) => {

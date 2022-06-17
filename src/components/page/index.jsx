@@ -1,6 +1,6 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Header from '../header'
+import Loader from '../loader'
 import { S2pH2, S2pPage, S2pPageCtn } from './style'
 
 
@@ -19,7 +19,9 @@ function Page(props) {
 
     const [ scrollPosition, setScrollPosition ] = useState(0)
     const { children, containerClass, cssRules, name, onWheelFunction, pageClass, scrollFunction } = props
-    
+    const Header = lazy( () => import('../header') )
+
+
     useEffect( () => {
         document.title = `Alexandre Bidaud - ${name}`
         window.addEventListener("scroll", () => setScrollPosition(window.pageYOffset))
@@ -29,7 +31,9 @@ function Page(props) {
  
     return(
         <S2pPageCtn id="page-ctn" $name={ name } $additionalCssRules={ cssRules } className={ containerClass } onWheel={ onWheelFunction }>
-            <Header />
+            <Suspense fallback={ <Loader /> }>
+                <Header />
+            </Suspense>
             <S2pPage id={`${name}-page`} className={ pageClass && pageClass }> 
                 { name !== "home" && <S2pH2>{ name }</S2pH2>}
                 { children } 
